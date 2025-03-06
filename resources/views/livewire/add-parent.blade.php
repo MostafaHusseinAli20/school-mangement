@@ -16,7 +16,6 @@
     @if ($show_parent)
         @include('livewire.Parent_Table')
     @else
-    
 
         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="backParentList"
         type="button">{{ trans('trans.back_parent_list') }}
