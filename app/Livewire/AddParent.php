@@ -261,12 +261,11 @@ class AddParent extends Component
     public function delete($id) 
     {
         $parent =  MyParent::findOrFail($id);
+        $folder_path = "$parent->national_ID_father";
 
-        // $folder_path = "public/$parent->national_ID_father"; 
-
-        // if (Storage::exists($folder_path)) {
-        //     Storage::deleteDirectory($folder_path );
-        // }
+        if (Storage::disk('public')->exists($folder_path)) {
+            Storage::disk('public')->deleteDirectory($folder_path);
+        }
 
         $parent->delete();
         return redirect()->to(LaravelLocalization::getCurrentLocale() . '/add_parent');
