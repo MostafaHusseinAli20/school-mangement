@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
+use App\Http\Controllers\Dashboard\Teachers\TeachersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -40,6 +41,9 @@ Route::group([
     // Sections Routes
     Route::resource('sections', SectionsController::class);
     Route::get('classes/{id}', [SectionsController::class, 'getclasses']);
+
+    // Teachers Routes
+    Route::resource('teachers', TeachersController::class);
 
 });
 

@@ -32,6 +32,12 @@ return new class extends Migration
         Schema::table('parent_attachments', function(Blueprint $table) {
             $table->foreignId('parent_id')->constrained('my_parents')->cascadeOnDelete()->cascadeOnUpdate();
         });
+
+        Schema::table('teachers', function(Blueprint $table){
+            $table->foreignId('specialist_id')->constrained('specialisations')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete()->cascadeOnUpdate();
+        });
     }
 
     /**
@@ -56,6 +62,11 @@ return new class extends Migration
         });
         Schema::table('parent_attachments', function(Blueprint $table){
             $table->dropForeign('parent_attachments_parent_id_foreign');
+        });
+        Schema::table('teachers', function(Blueprint $table){
+            $table->dropForeign('teachers_specialist_id_foreign');
+            $table->dropForeign('teachers_gender_id_foreign');
+            $table->dropForeign('teachers_grade_id_foreign');
         });
     }
 };

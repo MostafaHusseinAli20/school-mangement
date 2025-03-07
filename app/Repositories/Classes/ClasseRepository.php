@@ -3,10 +3,11 @@
 namespace App\Repositories\Classes;
 
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
+use App\Interfaces\Classes\ClassesInterface;
 use App\Models\Classe;
 use App\Models\Grade;
 
-class ClasseRepository
+class ClasseRepository implements ClassesInterface
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +19,11 @@ class ClasseRepository
         return view('dashboard.pages.classes.index', compact('classes', 'grades'));
     }
 
-    public function show(string $id)
+    public function show($id)
     {
         return app(SectionsController::class)->getclasses($id);
     }
-
+   
     /**
      * Store a newly created resource in storage.
      */
@@ -79,7 +80,7 @@ class ClasseRepository
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $classe = Classe::find($id);
         $classe->delete();

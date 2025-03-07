@@ -2,11 +2,12 @@
 
 namespace App\Repositories\Sections;
 
+use App\Interfaces\Sections\SectionInterface;
 use App\Models\Classe;
 use App\Models\Grade;
 use App\Models\Section;
 
-class SectionRepository
+class SectionRepository implements SectionInterface
 {
     /**
      * Display a listing of the resource.
@@ -42,7 +43,7 @@ class SectionRepository
     /**
      * Update the specified resource in storage.
      */
-    public function update($request, string $id)
+    public function update($request, $id)
     {
         try {
             $section = Section::find($id);
@@ -70,7 +71,7 @@ class SectionRepository
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $section = Section::find($id);
         $section->delete();

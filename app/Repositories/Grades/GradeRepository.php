@@ -2,11 +2,11 @@
 
 namespace App\Repositories\Grades;
 
+use App\Interfaces\Grades\GradeInterface;
 use App\Models\Classe;
 use App\Models\Grade;
-use Illuminate\Http\Request;
 
-class GradeRepository
+class GradeRepository implements GradeInterface
 {
     /**
      * Display a listing of the resource.
@@ -42,7 +42,7 @@ class GradeRepository
     /**
      * Update the specified resource in storage.
      */
-    public function update($request, string $id)
+    public function update($request, $id)
     {
         $grade = Grade::find($id);
         $grade->update([

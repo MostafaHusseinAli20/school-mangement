@@ -69,6 +69,7 @@ return [
 
     // Teachers
     'teachers' => 'Teachers',
+    'teachers_list' => 'Teachers List',
 
     // Parents
     'parents' => 'Parents',
