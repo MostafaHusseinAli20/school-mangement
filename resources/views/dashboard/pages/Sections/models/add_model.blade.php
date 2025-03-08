@@ -45,6 +45,16 @@
                         <select name="classe_id" class="custom-select">
                            
                         </select>
+                    </div><br>
+
+                    <!-- اختيار المعلمين التابعين للقسم -->
+                    <div class="col">
+                        <label for="inputName" class="control-label">{{ trans('trans.name_teacher') }}</label>
+                        <select multiple name="teacher_id[]" class="form-control" id="exampleFormControlSelect2">
+                            @foreach($teachers as $teacher)
+                                <option value="{{$teacher->id}}">{{$teacher->name}}</option>
+                            @endforeach
+                        </select>
                     </div>
 
              </div>

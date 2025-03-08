@@ -70,6 +70,18 @@ return [
     // Teachers
     'teachers' => 'Teachers',
     'teachers_list' => 'Teachers List',
+    'name_teacher' => 'Name Teacher',
+    'add_teacher' => 'Add Teacher',
+    'gender' => 'Gender',
+    'joining_date' => 'Joining Date',
+    'specialization' => 'Specialization', 
+    'name_teacher_ar'=> 'Name Teacher AR',
+    'name_teacher_en' => 'Name Teacher EN',
+    'address' => 'Address',
+    'message_added_teacher' => 'Teacher Added Successfuly',
+    'message_updated_teacher' => 'Teacher Updated Successfuly',
+    'message_deleted_teacher' => 'Teacher Deleted Successfuly',
+    'edit_teacher' => 'Edit Teacher',
 
     // Parents
     'parents' => 'Parents',

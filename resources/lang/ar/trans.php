@@ -3,7 +3,7 @@
 return [
     'school_mangement_system' =>  'نظام ادارة المدراس',
     'main' => 'الرئيسية',
-
+    
     // المراحل الدراسية
     'acadmic_year' => 'المراحل الدراسية',
     'grade_list' => 'قائمة المراحل الدراسية',
@@ -71,6 +71,18 @@ return [
     // المعلمين
     'teachers' => 'المعلمين',
     'teachers_list' => 'قائمة المعلمين',
+    'name_teacher' => 'اسم المعلم',
+    'add_teacher' => 'اضافة معلم',
+    'gender' => 'النوع',
+    'joining_date' => 'تاريخ التسجيل',
+    'specialization' => 'التخصص', 
+    'name_teacher_ar'=> 'اسم المعلم بالعربي',
+    'name_teacher_en' => 'اسم المعلم بالانجليزي',
+    'address' => 'العنوان',
+    'message_added_teacher' => 'تم اضافة المعلم بنجاح',
+    'message_updated_teacher' => 'تم تعديل المعلم بنجاح',
+    'message_deleted_teacher' => 'تم حذف المعلم بنجاح',
+    'edit_teacher' => 'تعديل المعلم',
 
     // اولياء الامور
     'parents' => 'اولياء الامور',

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Dashboard\Teachers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\Teachers\TeacherRequest;
+use App\Http\Requests\Dashboard\Teachers\UpdateTeacherRequest;
 use App\Interfaces\Teachers\TeacherInterface;
 use Illuminate\Http\Request;
 
@@ -27,15 +29,15 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        //
+        return $this->teacherInterface->create();
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(TeacherRequest $request)
     {
-        //
+        return $this->teacherInterface->store($request);
     }
 
     /**
@@ -43,7 +45,7 @@ class TeachersController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return $this->teacherInterface->show($id);
     }
 
     /**
@@ -51,15 +53,15 @@ class TeachersController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return $this->teacherInterface->edit($id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+        return $this->teacherInterface->update($request, $id);
     }
 
     /**
@@ -67,6 +69,6 @@ class TeachersController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return $this->teacherInterface->destroy($id);
     }
 }

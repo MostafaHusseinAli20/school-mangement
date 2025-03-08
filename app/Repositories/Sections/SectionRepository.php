@@ -6,6 +6,7 @@ use App\Interfaces\Sections\SectionInterface;
 use App\Models\Classe;
 use App\Models\Grade;
 use App\Models\Section;
+use App\Models\Teacher;
 
 class SectionRepository implements SectionInterface
 {
@@ -16,8 +17,8 @@ class SectionRepository implements SectionInterface
     {
         $grades = Grade::with(['sections'])->get();
         $list_grades = Grade::all();
-
-        return view('dashboard.pages.Sections.index', compact('grades', 'list_grades'));
+        $teachers = Teacher::get();
+        return view('dashboard.pages.Sections.index', compact('grades', 'list_grades', 'teachers'));
     }
 
     /**

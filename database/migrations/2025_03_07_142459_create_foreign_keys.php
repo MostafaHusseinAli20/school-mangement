@@ -35,7 +35,6 @@ return new class extends Migration
 
         Schema::table('teachers', function(Blueprint $table){
             $table->foreignId('specialist_id')->constrained('specialisations')->cascadeOnDelete()->cascadeOnUpdate();
-            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
