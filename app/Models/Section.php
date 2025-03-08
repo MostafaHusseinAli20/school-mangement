@@ -16,6 +16,13 @@ class Section extends Model
         return $this->belongsTo(Classe::class, 'classe_id');
     }
 
+
+    // Related Sections With Teachers
+    public function teachers()
+    {
+        return $this->belongsToMany(Teacher::class, 'teachers_sections','section_id','teacher_id');
+    }
+
     protected $casts = [
         'name_section' => 'array',
     ];

@@ -27,13 +27,14 @@ class SectionRepository implements SectionInterface
     public function store($request)
     {
         try {
-            Section::create([
+            $section = Section::create([
                 'name_section' => ['ar' => $request->name_section, 'en' => $request->name_section_en],
                 'grade_id' => $request->grade_id,
                 'classe_id' => $request->classe_id,
                 'status' => 1,
             ]);
 
+            $section->teachers()->attach($request->teacher_id);
             toastr()->success(trans('trans.message_sections_store'));
             return back();
         } catch (\Exception $e) {
@@ -59,8 +60,14 @@ class SectionRepository implements SectionInterface
             }else{
                 $section->status = 0;
             }
-
             $section->save();
+
+            // Update Pivot Table
+            if(isset($request->teacher_id)){
+                $section->teachers()->sync($request->teacher_id);
+            }else {
+                $section->teachers()->sync(array());
+            }
 
             toastr()->success(trans('trans.message_sections_update'));
             return back();

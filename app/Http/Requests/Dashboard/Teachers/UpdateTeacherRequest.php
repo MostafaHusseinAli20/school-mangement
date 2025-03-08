@@ -22,14 +22,14 @@ class UpdateTeacherRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => 'nullable|email',
-            'password' => 'sometimes|nullable|min:8',
-            'name_teacher_ar' => 'nullable|string',
-            'name_teacher_en' => 'nullable|string',
-            'joining_data' => 'nullable|date',
-            'address' => 'nullable|string',
-            'gender_id' => 'nullable|integer|exists:genders,id',
-            'specialist_id' => 'nullable|integer|exists:specialisations,id',
+            'email' => 'sometimes|email|unique:teachers,email,' . $this->id,
+            'password' => 'nullable|min:8',
+            'name_teacher_ar' => 'sometimes|string|max:255',
+            'name_teacher_en' => 'sometimes|string|max:255',
+            'joining_data' => 'sometimes|date',
+            'address' => 'sometimes|string|max:500',
+            'gender_id' => 'sometimes|integer|exists:genders,id',
+            'specialist_id' => 'sometimes|integer|exists:specialisations,id',
         ];
     }
 }

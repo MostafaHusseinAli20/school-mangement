@@ -59,7 +59,7 @@ class TeachersController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTeacherRequest $request, $id)
     {
         return $this->teacherInterface->update($request, $id);
     }

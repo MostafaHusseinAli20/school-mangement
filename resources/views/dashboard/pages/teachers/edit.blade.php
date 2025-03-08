@@ -39,7 +39,7 @@
                                 </div>
                                 <div class="col">
                                     <label for="title">{{trans('trans.Password')}}</label>
-                                    <input type="password" name="password" value="{{ $teachers->password }}" class="form-control">
+                                    <input type="password" name="password" class="form-control">
                                     @error('password')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror

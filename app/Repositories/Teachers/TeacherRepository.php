@@ -46,7 +46,7 @@ class TeacherRepository implements TeacherInterface
                 'specialist_id' => $request->specialist_id,
                 'address' => $request->address,
             ]);
-
+            
             toastr()->success(trans('trans.message_added_teacher'));
             return redirect()->route('teachers.index');
         } catch (\Exception $e) {

@@ -20,6 +20,13 @@ class Teacher extends Model
     {
         return $this->belongsTo(Specialisation::class, 'specialist_id', 'id');
     }
+     
+    // Related Teacher With Sections
+    public function sections()
+    {
+        return $this->belongsToMany(Section::class, 'teachers_sections','teacher_id','section_id');
+    }
+
     protected $casts = [
         'name' => 'array',
     ];
