@@ -37,6 +37,17 @@ return new class extends Migration
             $table->foreignId('specialist_id')->constrained('specialisations')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete()->cascadeOnUpdate();
         });
+        
+        Schema::table('students', function(Blueprint $table){
+            $table->foreignId('gender_id')->constrained('genders')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('nationality_id')->constrained('nationalities')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('type_blood_id')->constrained('type_bloods')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('section_id')->constrained('sections')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('parent_id')->constrained('my_parents')->cascadeOnDelete()->cascadeOnUpdate();
+            
+        });
     }
 
     /**
@@ -47,10 +58,12 @@ return new class extends Migration
         Schema::table('classes', function (Blueprint $table) {
             $table->dropForeign('classes_grade_id_foreign');
         });
+
         Schema::table('sections', function (Blueprint $table) {
             $table->dropForeign('sections_grade_id_foreign');
             $table->dropForeign('sections_classe_id_foreign');
         });
+
         Schema::table('my_parents', function(Blueprint $table) {
             $table->dropForeign('my_parents_nationality_father_id_foreign');
             $table->dropForeign('my_parents_blood_type_father_id_foreign');
@@ -59,13 +72,25 @@ return new class extends Migration
             $table->dropForeign('my_parents_blood_type_mother_id_foreign');
             $table->dropForeign('my_parents_religion_mother_id_foreign');
         });
+
         Schema::table('parent_attachments', function(Blueprint $table){
             $table->dropForeign('parent_attachments_parent_id_foreign');
         });
+
         Schema::table('teachers', function(Blueprint $table){
             $table->dropForeign('teachers_specialist_id_foreign');
             $table->dropForeign('teachers_gender_id_foreign');
             $table->dropForeign('teachers_grade_id_foreign');
+        });
+
+        Schema::table('students', function(Blueprint $table){
+            $table->dropForeign('students_gender_id_foreign');
+            $table->dropForeign('students_nationality_id_foreign');
+            $table->dropForeign('students_type_blood_id_foreign');
+            $table->dropForeign('students_type_grade_id_foreign');
+            $table->dropForeign('students_type_classe_id_foreign');
+            $table->dropForeign('students_type_section_id_foreign');
+            $table->dropForeign('students_type_parent_id_foreign');
         });
     }
 };

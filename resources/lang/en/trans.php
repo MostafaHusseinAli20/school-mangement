@@ -66,6 +66,25 @@ return [
 
     // Students
     'students' => 'Students',
+    'students_list' => 'Students List',
+    'add_student' => 'Add Student',
+    'edit_student' => 'Edit Student',
+    'Student_information' => 'Student Information',
+    'personal_information' => 'Personal Information',
+    'name_student_ar' => 'Name Student AR',
+    'name_student_en' => 'Name Student EN',
+    'nationality' => 'Nationality',
+    'blood_type' => 'Type Blood',
+    'date_of_birth' => 'Date of Birth',
+    'grade' => 'Grade',
+    'academic_year' => 'Academic Year',
+    'message_added_student' => 'Student Added Successfily',
+    'message_update_student' => 'Student Updated Successfily',
+    'message_delete_student' => 'Student Deleted Successfily',
+    'section' => 'Section',
+    'deleted_student' => 'Delete Student',
+    'deleted_student_tilte' => 'Delete Student By Name: ',
+
 
     // Teachers
     'teachers' => 'Teachers',
@@ -87,6 +106,7 @@ return [
     'parents' => 'Parents',
     'parents_list' => 'Parents List',
     'add_parent' => 'Add Parent',
+    'parent' => 'Parent',
 
     // Accounts
     'accounts' => 'Accounts',

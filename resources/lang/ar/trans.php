@@ -3,7 +3,7 @@
 return [
     'school_mangement_system' =>  'نظام ادارة المدراس',
     'main' => 'الرئيسية',
-    
+
     // المراحل الدراسية
     'acadmic_year' => 'المراحل الدراسية',
     'grade_list' => 'قائمة المراحل الدراسية',
@@ -48,6 +48,7 @@ return [
 
     // الاقسام
     'sections' => 'الاقسام',
+    'section' => 'القسم',
     'sections_list' => 'قائمة الاقسام',
     'add_section' => 'اضافة قسم',
     'name_section' => 'اسم القسم',
@@ -67,6 +68,23 @@ return [
 
     // الطلاب
     'students' => 'الطلاب',
+    'students_list' => 'قائمة الطلاب',
+    'add_student' => 'اضافة طالب',
+    'edit_student' => 'تعديل طالب',
+    'personal_information' => 'البيانات الشخصية',
+    'Student_information' => 'بيانات الطالب',
+    'name_student_ar' => 'اسم الطالب بالعربي',
+    'name_student_en' => 'اسم الطالب بالانجليزي',
+    'nationality' => 'الجنسية',
+    'blood_type' => 'فصيلة الدم',
+    'date_of_birth' => 'تاريخ الميلاد',
+    'grade' => 'المرحلة الدراسية',
+    'academic_year' => 'العام الدراسي',
+    'message_added_student' => 'تم اضافة الطالب بنجاح',
+    'message_update_student' => 'تم تعديل الطالب بنجاح',
+    'message_delete_student' => 'تم حذف الطالب بنجاح',
+    'deleted_student' => 'حذف الطالب',
+    'deleted_student_tilte' => 'حذف الطالب ب اسم: ',
 
     // المعلمين
     'teachers' => 'المعلمين',
@@ -86,6 +104,7 @@ return [
 
     // اولياء الامور
     'parents' => 'اولياء الامور',
+    'parent' => 'ولي الامر',
     'parents_list' => 'قائمة اولياء الامور',
     'add_parent' => 'اضافة ولي امر',
 

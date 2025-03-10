@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Dashboard\Sections;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Sections\SectionRequest;
-use App\Interfaces\MainCrudRepoInterface;
 use App\Interfaces\Sections\SectionInterface;
-use App\Repositories\Sections\SectionRepository;
 
 class SectionsController extends Controller
 {

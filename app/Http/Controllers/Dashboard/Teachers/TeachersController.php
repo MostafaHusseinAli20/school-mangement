@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Teachers\TeacherRequest;
 use App\Http\Requests\Dashboard\Teachers\UpdateTeacherRequest;
 use App\Interfaces\Teachers\TeacherInterface;
-use Illuminate\Http\Request;
 
 class TeachersController extends Controller
 {

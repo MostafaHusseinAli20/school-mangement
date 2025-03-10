@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
+use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Teachers\TeachersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -45,6 +46,10 @@ Route::group([
     // Teachers Routes
     Route::resource('teachers', TeachersController::class);
 
+    // Students Routes
+    Route::resource('students', StudentController::class);
+    Route::get('/get_classes/{id}', [StudentController::class, 'getClasses']);
+    Route::get('/get_sections/{id}', [StudentController::class, 'getSections']);
 });
 
 

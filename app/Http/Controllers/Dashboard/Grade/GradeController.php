@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Dashboard\Grade;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Grades\GradeRequest;
 use App\Interfaces\Grades\GradeInterface;
-use App\Repositories\Grades\GradeRepository;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
