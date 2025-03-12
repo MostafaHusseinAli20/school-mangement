@@ -16,4 +16,5 @@ interface StudentInterface
     public function upload_attachment($request);
     public function download_attachment($students_name, $file_name);
     public function delete_attachment($request);
+    public function show_attachment($student_name,$file_name);
 }

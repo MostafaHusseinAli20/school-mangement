@@ -87,6 +87,7 @@ return [
     'show_student' => 'Show Student',
     'filename' => 'File Name',
     'download' => 'Download',
+    'show' => 'Show',
     'created_at' => 'Created At',
     'message_delete_attachment' => 'Attachment Deleted Successfuly',
     'message_added_attachment' => 'Attachment Added Successfuly',

@@ -88,6 +88,7 @@ return [
     'show_student' => 'عرض الطالب',
     'filename' => 'اسم الملف',
     'download' => 'تحميل',
+    'show' => 'عرض',
     'created_at' => 'تاريخ الاضافة',
     'message_delete_attachment' => 'تم حذف المرفق بنجاح',
     'message_added_attachment' => 'تم اضافة المرفق بنجاح',

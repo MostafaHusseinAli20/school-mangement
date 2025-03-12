@@ -145,10 +145,9 @@ class StudentRepository implements StudentInterface
 
     public function upload_attachment($request)
     {
-        foreach ($request->file('photos') as $photo) 
-        {
+        foreach ($request->file('photos') as $photo) {
             $name = $photo->getClientOriginalName();
-            $photo->storeAs('students_attachments/' . $request->student_name , $photo->getClientOriginalName(), 'public');
+            $photo->storeAs('students_attachments/' . $request->student_name, $photo->getClientOriginalName(), 'public');
 
             Image::create([
                 'file_name' => $name,
@@ -157,7 +156,7 @@ class StudentRepository implements StudentInterface
             ]);
         }
         toastr()->success(trans('trans.message_added_attachment'));
-        return redirect()->route('students.show',$request->student_id);
+        return redirect()->route('students.show', $request->student_id);
     }
 
     public function download_attachment($students_name, $file_name)
@@ -216,5 +215,16 @@ class StudentRepository implements StudentInterface
     {
         $list_sections = Section::where("classe_id", $id)->pluck("name_section", "id");
         return $list_sections;
+    }
+
+    public function show_attachment($student_name, $file_name)
+    {
+        $file = Storage::disk('public')->path("students_attachments/$student_name/$file_name");
+
+        if (Storage::disk('public')->exists("students_attachments/$student_name/$file_name")) {
+            return response()->file($file);
+        } else {
+            return abort(404, 'File not found.');
+        }
     }
 }

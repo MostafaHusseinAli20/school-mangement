@@ -51,6 +51,7 @@ Route::group([
     Route::get('/get_classes/{id}', [StudentController::class, 'getClasses']);
     Route::get('/get_sections/{id}', [StudentController::class, 'getSections']);
     Route::post('upload_attachment', [StudentController::class, 'upload_attachment'])->name('upload_attachment');
+    Route::get('/show_attachment/{student_name}/{file_name}', [StudentController::class, 'show_attachment']);
     Route::get('/download_attachment/{student_name}/{file_name}', [StudentController::class, 'download_attachment']);
     Route::post('/delete_attachment', [StudentController::class, 'delete_attachment'])->name('delete_attachment');
     // Route::get('store_attachment_student', [StudentController::class, 'getStoreData']);

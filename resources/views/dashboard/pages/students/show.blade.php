@@ -107,6 +107,11 @@
                                                     <td>{{$attachment->file_name}}</td>
                                                     <td>{{$attachment->created_at->diffForHumans()}}</td>
                                                     <td colspan="2">
+
+                                                        <a class="btn btn-outline-success btn-sm" target="_blank"
+                                                        href="{{url('show_attachment')}}/{{ $attachment->imageable->name }}/{{$attachment->file_name}}"
+                                                        role="button"><i class="fas fa-eye"></i>&nbsp; {{trans('trans.show')}}</a>
+
                                                         <a class="btn btn-outline-info btn-sm"
                                                            href="{{url('download_attachment')}}/{{ $attachment->imageable->name }}/{{$attachment->file_name}}"
                                                            role="button"><i class="fas fa-download"></i>&nbsp; {{trans('trans.download')}}</a>
@@ -114,7 +119,7 @@
                                                         <button type="button" class="btn btn-outline-danger btn-sm"
                                                                 data-toggle="modal"
                                                                 data-target="#Delete_img{{ $attachment->id }}"
-                                                                title="{{ trans('trans.delete') }}">{{trans('trans.delete')}}
+                                                                title="{{ trans('trans.delete') }}"><i class="fa fa-trash"></i> {{trans('trans.delete')}}
                                                         </button>
 
                                                     </td>
