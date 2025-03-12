@@ -34,7 +34,7 @@ class StudentRequest extends FormRequest
             'grade_id' => 'required|exists:grades,id',
             'classe_id' => 'required|exists:classes,id',
             'section_id' => 'required|exists:sections,id',
-            'parent_id' => 'required|exists:my_parents,id'
+            'parent_id' => 'required|exists:my_parents,id',
         ];
     }
 }

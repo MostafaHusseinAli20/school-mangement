@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Students\StudentRequest;
 use App\Http\Requests\Dashboard\Students\UpdateStudentRequest;
 use App\Interfaces\Students\StudentInterface;
+use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
@@ -45,7 +46,7 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->studentInteface->show($id);
     }
 
     /**
@@ -61,7 +62,7 @@ class StudentController extends Controller
      */
     public function update(UpdateStudentRequest $request, $id)
     {
-        return $this->studentInteface->update($request,$id);
+        return $this->studentInteface->update($request, $id);
     }
 
     /**
@@ -74,11 +75,26 @@ class StudentController extends Controller
 
     public function getClasses($id)
     {
-       return $this->studentInteface->getClasses($id);
+        return $this->studentInteface->getClasses($id);
     }
 
     public function getSections($id)
     {
         return $this->studentInteface->getSections($id);
+    }
+
+    public function upload_attachment(Request $request)
+    {
+        return $this->studentInteface->upload_attachment($request);
+    }
+
+    public function download_attachment($students_name, $file_name)
+    {
+        return $this->studentInteface->download_attachment($students_name, $file_name);
+    }
+
+    public function delete_attachment(Request $request)
+    {
+        return $this->studentInteface->delete_attachment($request);
     }
 }

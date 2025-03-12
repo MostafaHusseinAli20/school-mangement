@@ -84,7 +84,13 @@ return [
     'section' => 'Section',
     'deleted_student' => 'Delete Student',
     'deleted_student_tilte' => 'Delete Student By Name: ',
-
+    'show_student' => 'Show Student',
+    'filename' => 'File Name',
+    'download' => 'Download',
+    'created_at' => 'Created At',
+    'message_delete_attachment' => 'Attachment Deleted Successfuly',
+    'message_added_attachment' => 'Attachment Added Successfuly',
+    'message_no_found_attachment' => 'No Files in This Path',
 
     // Teachers
     'teachers' => 'Teachers',

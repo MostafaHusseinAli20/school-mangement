@@ -51,7 +51,7 @@
                                                             data-target="#Delete_Student{{ $student->id }}"
                                                             title="{{ trans('grade.delete') }}"><i
                                                                 class="fa fa-trash"></i></button>
-                                                        <a href="#" class="btn btn-warning btn-sm" role="button"
+                                                        <a href="{{ route('students.show', $student->id) }}" class="btn btn-warning btn-sm" role="button"
                                                             aria-pressed="true"><i class="far fa-eye"></i></a>
                                                     </td>
                                                 </tr>

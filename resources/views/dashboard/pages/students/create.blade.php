@@ -23,7 +23,7 @@
                         </div>
                     @endif
 
-                    <form method="post" action="{{ route('students.store') }}" autocomplete="off">
+                    <form method="post" action="{{ route('students.store') }}" autocomplete="off" enctype="multipart/form-data">
                         @csrf
                         <h6 style="font-family: 'Cairo', sans-serif;color: blue">{{ trans('trans.personal_information') }}
                         </h6><br>
@@ -46,7 +46,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label>{{ trans('trans.email') }} : </label>
+                                    <label>{{ trans('trans.Email') }} : </label>
                                     <input type="email" name="email" class="form-control">
                                 </div>
                             </div>
@@ -170,6 +170,15 @@
                                     </select>
                                 </div>
                             </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="academic_year">{{ trans('trans.attachments') }} : <span
+                                            class="text-danger">*</span></label>
+                                    <input type="file" accept="image/*" name="photos[]" multiple>
+                                </div>
+                            </div>
+
                         </div><br>
                         <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
                             type="submit">{{ trans('trans.submit') }}</button>

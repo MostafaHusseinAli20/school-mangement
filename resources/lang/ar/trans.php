@@ -85,7 +85,14 @@ return [
     'message_delete_student' => 'تم حذف الطالب بنجاح',
     'deleted_student' => 'حذف الطالب',
     'deleted_student_tilte' => 'حذف الطالب ب اسم: ',
-
+    'show_student' => 'عرض الطالب',
+    'filename' => 'اسم الملف',
+    'download' => 'تحميل',
+    'created_at' => 'تاريخ الاضافة',
+    'message_delete_attachment' => 'تم حذف المرفق بنجاح',
+    'message_added_attachment' => 'تم اضافة المرفق بنجاح',
+    'message_no_found_attachment' => 'لايوجد ملفات في هذا المسار',
+    
     // المعلمين
     'teachers' => 'المعلمين',
     'teachers_list' => 'قائمة المعلمين',

@@ -31,4 +31,20 @@ class Student extends Model
     {
         return $this->belongsTo(Section::class, 'section_id');
     }
+
+    public function myParent()
+    {
+        return $this->belongsTo(MyParent::class, 'parent_id');
+    }
+
+    public function nationality()
+    {
+        return $this->belongsTo(Nationality::class, 'nationality_id');
+    }
+
+    // Realtion Between Student with Image (Polymorphic)
+    public function images()
+    {
+        return $this->morphMany(Image::class, 'imageable');
+    }
 }
