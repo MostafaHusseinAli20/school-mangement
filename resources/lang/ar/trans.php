@@ -98,6 +98,7 @@ return [
     'new_grade_study' => 'المرحلة الدراسية الجديدة',
     'error_promotions' => 'لاتوجد بيانات في جدول الطلاب',
     'message_promotion_successfuly' => 'تم الترقية بنجاح',
+    'sure' => 'تأكيد',
     
     // المعلمين
     'teachers' => 'المعلمين',

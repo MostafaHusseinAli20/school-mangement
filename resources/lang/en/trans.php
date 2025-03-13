@@ -97,6 +97,7 @@ return [
     'new_grade_study' => 'New School Stage',
     'error_promotions' => 'No Data in Students Table',
     'message_promotion_successfuly' => 'Promotion is successfuly',
+    'sure' => 'save',
 
     // Teachers
     'teachers' => 'Teachers',

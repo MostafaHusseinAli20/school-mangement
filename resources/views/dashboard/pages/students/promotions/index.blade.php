@@ -77,7 +77,7 @@
                                 </select>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">تاكيد</button>
+                        <button type="submit" class="btn btn-primary">{{ trans('trans.sure') }}</button>
                     </form>
 
                 </div>
