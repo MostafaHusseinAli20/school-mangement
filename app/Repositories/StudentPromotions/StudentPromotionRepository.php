@@ -44,7 +44,7 @@ class StudentPromotionRepository implements StudentPromotionsInterface
 
 
                 // insert in promotion table
-                Promotion::create([
+                Promotion::updateOrCreate([
                     'student_id' => $student->id,
                     'from_grade' => $request->grade_id,
                     'from_classe' => $request->classe_id,
@@ -62,7 +62,7 @@ class StudentPromotionRepository implements StudentPromotionsInterface
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
-    
+
     public function update($request, $id) {}
     public function destroy($id) {}
 }
