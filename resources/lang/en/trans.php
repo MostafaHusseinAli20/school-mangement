@@ -92,6 +92,11 @@ return [
     'message_delete_attachment' => 'Attachment Deleted Successfuly',
     'message_added_attachment' => 'Attachment Added Successfuly',
     'message_no_found_attachment' => 'No Files in This Path',
+    'students_promotions' => 'Students Promotions',
+    'old_grade_study' => 'Old School Stage',
+    'new_grade_study' => 'New School Stage',
+    'error_promotions' => 'No Data in Students Table',
+    'message_promotion_successfuly' => 'Promotion is successfuly',
 
     // Teachers
     'teachers' => 'Teachers',

@@ -24,7 +24,7 @@
                                             <tr>
                                                 <th>#</th>
                                                 <th>{{ trans('trans.name') }}</th>
-                                                <th>{{ trans('trans.email') }}</th>
+                                                <th>{{ trans('trans.Email') }}</th>
                                                 <th>{{ trans('trans.gender') }}</th>
                                                 <th>{{ trans('trans.grade') }}</th>
                                                 <th>{{ trans('trans.classes') }}</th>

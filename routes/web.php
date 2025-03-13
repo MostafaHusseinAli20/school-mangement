@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
+use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Teachers\TeachersController;
@@ -54,9 +55,10 @@ Route::group([
     Route::get('/show_attachment/{student_name}/{file_name}', [StudentController::class, 'show_attachment']);
     Route::get('/download_attachment/{student_name}/{file_name}', [StudentController::class, 'download_attachment']);
     Route::post('/delete_attachment', [StudentController::class, 'delete_attachment'])->name('delete_attachment');
-    // Route::get('store_attachment_student', [StudentController::class, 'getStoreData']);
+    
+    // Promotions Students
+    Route::resource('student-promotions', StudentPromotionsController::class);
 });
-
 
 // Livewire Routes
 Route::view("/ar/add_parent", 'livewire.main')->middleware('auth');

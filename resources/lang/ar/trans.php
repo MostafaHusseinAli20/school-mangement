@@ -93,6 +93,11 @@ return [
     'message_delete_attachment' => 'تم حذف المرفق بنجاح',
     'message_added_attachment' => 'تم اضافة المرفق بنجاح',
     'message_no_found_attachment' => 'لايوجد ملفات في هذا المسار',
+    'students_promotions' => 'ترقية الطلاب',
+    'old_grade_study' => 'المرحلة الدراسية القديمة',
+    'new_grade_study' => 'المرحلة الدراسية الجديدة',
+    'error_promotions' => 'لاتوجد بيانات في جدول الطلاب',
+    'message_promotion_successfuly' => 'تم الترقية بنجاح',
     
     // المعلمين
     'teachers' => 'المعلمين',

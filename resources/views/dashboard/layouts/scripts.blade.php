@@ -53,3 +53,111 @@
         }
     }
 </script>
+
+{{-- Old Grade --}}
+<script>
+    $(document).ready(function() {
+        $('select[name="grade_id"]').on('change', function() {
+            var Grade_id = $(this).val();
+            if (Grade_id) {
+                $.ajax({
+                    url: "{{ URL::to('get_classes') }}/" + Grade_id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="classe_id"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="classe_id"]').append(
+                                '<option value="' + key + '">' + value +
+                                '</option>');
+                        });
+
+                    },
+                });
+            } else {
+                console.log('AJAX load did not work');
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $('select[name="classe_id"]').on('change', function() {
+            var classe_id = $(this).val();
+            if (classe_id) {
+                $.ajax({
+                    url: "{{ URL::to('get_sections') }}/" + classe_id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="section_id"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="section_id"]').append(
+                                '<option value="' + key + '">' + value +
+                                '</option>');
+                        });
+
+                    },
+                });
+            } else {
+                console.log('AJAX load did not work');
+            }
+        });
+    });
+</script>
+{{-- End Old Grade --}}
+
+{{-- New Grade Promotion --}}
+<script>
+    $(document).ready(function () {
+        $('select[name="grade_id_new"]').on('change', function () {
+            var Grade_id = $(this).val();
+            if (Grade_id) {
+                $.ajax({
+                    url: "{{ URL::to('get_classes') }}/" + Grade_id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        $('select[name="classe_id_new"]').empty();
+                        $.each(data, function (key, value) {
+                            $('select[name="classe_id_new"]').append('<option value="' + key + '">' + value + '</option>');
+                        });
+
+                    },
+                });
+            }
+
+            else {
+                console.log('AJAX load did not work');
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $('select[name="classe_id_new"]').on('change', function () {
+            var Classroom_id = $(this).val();
+            if (Classroom_id) {
+                $.ajax({
+                    url: "{{ URL::to('get_sections') }}/" + Classroom_id,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (data) {
+                        $('select[name="section_id_new"]').empty();
+                        $.each(data, function (key, value) {
+                            $('select[name="section_id_new"]').append('<option value="' + key + '">' + value + '</option>');
+                        });
+
+                    },
+                });
+            }
+
+            else {
+                console.log('AJAX load did not work');
+            }
+        });
+    });
+</script>
+{{-- End New Grade Promotion --}}
