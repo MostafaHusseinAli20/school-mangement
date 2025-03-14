@@ -99,6 +99,8 @@ return [
     'error_promotions' => 'لاتوجد بيانات في جدول الطلاب',
     'message_promotion_successfuly' => 'تم الترقية بنجاح',
     'sure' => 'تأكيد',
+    'Delete_attachment_tilte' => 'هل تريد حذف المرفق:',
+    'Delete_attachment' => 'حذف المرفق',
     
     // المعلمين
     'teachers' => 'المعلمين',

@@ -98,6 +98,8 @@ return [
     'error_promotions' => 'No Data in Students Table',
     'message_promotion_successfuly' => 'Promotion is successfuly',
     'sure' => 'save',
+    'Delete_attachment_tilte' => 'Are You Sure Delete Attachment:',
+    'Delete_attachment' => 'Delete Attachment',
 
     // Teachers
     'teachers' => 'Teachers',

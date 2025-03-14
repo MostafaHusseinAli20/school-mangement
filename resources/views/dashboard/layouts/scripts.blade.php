@@ -66,6 +66,7 @@
                     dataType: "json",
                     success: function(data) {
                         $('select[name="classe_id"]').empty();
+                        $('select[name="classe_id"]').append('<option selected disabled >{{trans('trans.Choose')}}...</option>');
                         $.each(data, function(key, value) {
                             $('select[name="classe_id"]').append(
                                 '<option value="' + key + '">' + value +
@@ -120,6 +121,7 @@
                     dataType: "json",
                     success: function (data) {
                         $('select[name="classe_id_new"]').empty();
+                        $('select[name="classe_id_new"]').append('<option selected disabled >{{trans('trans.Choose')}}...</option>');
                         $.each(data, function (key, value) {
                             $('select[name="classe_id_new"]').append('<option value="' + key + '">' + value + '</option>');
                         });

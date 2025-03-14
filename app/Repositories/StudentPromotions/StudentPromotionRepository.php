@@ -39,7 +39,8 @@ class StudentPromotionRepository implements StudentPromotionsInterface
                     ->update([
                         'grade_id' => $request->grade_id_new,
                         'classe_id' => $request->classe_id_new,
-                        'section_id' => $request->section_id_new
+                        'section_id' => $request->section_id_new,
+                        'academic_year' => $request->academic_year_new
                     ]);
 
 
@@ -51,7 +52,9 @@ class StudentPromotionRepository implements StudentPromotionsInterface
                     'from_section' => $request->section_id,
                     'to_grade' => $request->grade_id_new,
                     'to_classe' => $request->classe_id_new,
-                    'to_section' => $request->section_id_new
+                    'to_section' => $request->section_id_new,
+                    'academic_year_old' => $request->academic_year_old,
+                    'academic_year_new' => $request->academic_year_new,
                 ]);
             }
             DB::commit();
