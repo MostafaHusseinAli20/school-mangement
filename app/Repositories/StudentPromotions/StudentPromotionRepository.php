@@ -24,8 +24,8 @@ class StudentPromotionRepository implements StudentPromotionsInterface
 
     public function store($request)
     {
+        DB::beginTransaction();
         try {
-            DB::beginTransaction();
             $students = Student::where('grade_id', $request->grade_id)
                 ->where('classe_id', $request->classe_id)
                 ->where('section_id', $request->section_id)

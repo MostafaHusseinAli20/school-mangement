@@ -45,8 +45,8 @@ class StudentRepository implements StudentInterface
      */
     public function store($request)
     {
+        DB::beginTransaction();
         try {
-            DB::beginTransaction();
             $student = Student::create([
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
