@@ -79,7 +79,7 @@ return [
     'blood_type' => 'فصيلة الدم',
     'date_of_birth' => 'تاريخ الميلاد',
     'grade' => 'المرحلة الدراسية',
-    'academic_year' => 'العام الدراسي',
+    
     'message_added_student' => 'تم اضافة الطالب بنجاح',
     'message_update_student' => 'تم تعديل الطالب بنجاح',
     'message_delete_student' => 'تم حذف الطالب بنجاح',
@@ -101,7 +101,26 @@ return [
     'sure' => 'تأكيد',
     'Delete_attachment_tilte' => 'هل تريد حذف المرفق:',
     'Delete_attachment' => 'حذف المرفق',
+
+    'mangement_promotion' => 'ادارة تريقة الطلاب',
+    'grade_stage_old' => 'المرحلة الدراسية السابقة',
+    'old_academic_year' => ' السنة الدراسية القديمة',
+    'old_classe' => 'الصف الدراسي السابق',
+
+    'grade_stage_new' => 'المرحلة الدراسية الحالية',
+    'new_academic_year' => ' السنة الدراسية الحالية',
+    'new_classe' => 'الصف الدراسي الحالي',
+    'delete_all_management' => 'هل انت متأكد من عملية تراجع كافة الطلاب ؟',
+    'rollback_all' => 'تراجع الكل',
+    'rollback_student' => 'ارجاع طالب',
+    'message_rollback' => 'تم التراجع بنجاح',
+    'message_rollback_student' => 'تم تراجع الطالب بنجاح',
     
+    'add_promotion' => 'اضافة ترقية',
+    'list_promotions' => 'قائمة الترقيات', 
+    'model_rollback_student' => 'هل انت متاكد من عملية تراجع الطالب ؟',
+    'graduate_student' => 'تخرج طالب',
+
     // المعلمين
     'teachers' => 'المعلمين',
     'teachers_list' => 'قائمة المعلمين',

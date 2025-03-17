@@ -16,6 +16,12 @@ class StudentPromotionRepository implements StudentPromotionsInterface
         return view('dashboard.pages.students.promotions.index', compact('grades'));
     }
 
+    public function create()
+    {
+        $promotions = Promotion::get();
+        return view('dashboard.pages.students.promotions.management', compact('promotions'));
+    }
+
     public function store($request)
     {
         try {
@@ -66,6 +72,58 @@ class StudentPromotionRepository implements StudentPromotionsInterface
         }
     }
 
-    public function update($request, $id) {}
-    public function destroy($id) {}
+    public function destroy($request)
+    {
+        DB::beginTransaction();
+        try {
+
+            // Rollback for all
+            if ($request->page_id == 1) {
+                $promotions = Promotion::get();
+                foreach ($promotions as $promotion) {
+                    $ids = explode(',', $promotion->student_id);
+
+                    // Update Student for old data
+                    Student::whereIn('id', $ids)
+                        ->update([
+                            'grade_id' => $promotion->from_grade,
+                            'classe_id' => $promotion->from_classe,
+                            'section_id' => $promotion->from_section,
+                            'academic_year' => $promotion->academic_year_old
+                        ]);
+
+                    // Delete Data in Promotion Table
+                    Promotion::truncate();
+                }
+
+                // Save
+                DB::commit();
+                toastr()->error(trans('trans.message_rollback'));
+                return back();
+            }
+
+            // Rollback for One Student
+            else {
+                $promotion = Promotion::findOrFail($request->id);
+
+                Student::where('id', $promotion->student_id)
+                    ->update([
+                        'grade_id' => $promotion->from_grade,
+                        'classe_id' => $promotion->from_classe,
+                        'section_id' => $promotion->from_section,
+                        'academic_year' => $promotion->academic_year_old
+                    ]);
+
+                Promotion::destroy($request->id);
+
+                // Save
+                DB::commit();
+                toastr()->error(trans('trans.message_rollback_student'));
+                return back();
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return back()->withErrors(['error' => $e->getMessage()]);
+        }
+    }
 }

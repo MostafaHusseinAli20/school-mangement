@@ -100,6 +100,25 @@ return [
     'sure' => 'save',
     'Delete_attachment_tilte' => 'Are You Sure Delete Attachment:',
     'Delete_attachment' => 'Delete Attachment',
+    'mangement_promotion' => 'Management Students Promotions',
+    
+    'grade_stage_old' => 'Old Grade',
+    'old_academic_year' => 'Old Academic Year',
+    'old_classe' => 'Old Classe',
+
+    'grade_stage_new' => 'New Grade',
+    'new_academic_year' => 'New Academic Year',
+    'new_classe' => 'New Classe',
+    'delete_all_management' => 'Are You Sure Rollback Proccess for All Students',
+    'rollback_all' => 'Rollback All',
+    'rollback_student' => 'Rollback Student',
+    'message_rollback' => 'Rollback Successfuly',
+    'message_rollback_student' => 'Rollback Student Successfuly',
+
+    'add_promotion' => 'Add Promotion',
+    'list_promotions' => 'List Promotions',
+    'model_rollback_student' => 'Are You Sure for Student Proccess Rollback ?',
+    'graduate_student' => 'Graduate Student',
 
     // Teachers
     'teachers' => 'Teachers',
