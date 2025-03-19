@@ -77,6 +77,14 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('trans.student-graduate')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
+                                <ul id="Graduate students" class="collapse">
+                                    <li> <a href="{{route('student-graduate.create')}}">{{trans('trans.add_graduate')}}</a></li>
+                                    <li> <a href="{{route('student-graduate.index')}}">{{trans('trans.list_graduates')}}</a> </li>
+                                </ul>
+                            </li>
+
                             {{-- <li>
                                 <a href="javascript:void(0);" data-toggle="collapse" data-target="#Graduate students">{{trans('main_trans.Graduate_students')}}<div class="pull-right"><i class="ti-plus"></i></div><div class="clearfix"></div></a>
                                 <ul id="Graduate students" class="collapse">

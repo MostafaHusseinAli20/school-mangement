@@ -5,6 +5,7 @@ use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
+use App\Http\Controllers\Dashboard\Students\StudentGraduate\StudentGraduateController;
 use App\Http\Controllers\Dashboard\Teachers\TeachersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -58,6 +59,9 @@ Route::group([
     
     // Promotions Students
     Route::resource('student-promotions', StudentPromotionsController::class);
+
+    // Graduate Students
+    Route::resource('student-graduate', StudentGraduateController::class);
 });
 
 // Livewire Routes

@@ -120,7 +120,15 @@ return [
     'list_promotions' => 'قائمة الترقيات', 
     'model_rollback_student' => 'هل انت متاكد من عملية تراجع الطالب ؟',
     'graduate_student' => 'تخرج طالب',
-
+    
+    'student-graduate' => 'الطلاب المتخرجون',
+    'add_graduate' => 'اضافة تخرج',
+    'list_graduates' => 'قائمة المتخرجون',
+    'create_student_graduate' => 'اضافة تخرج طالب',
+    'error_Graduated' => 'لايوجد بيانات في التخرج',
+    'message_success_restore_student' => 'تم التراجع عن التخرج',
+    'message_delete_student_graduate' => 'تم حذف الطالب نهائيا',
+    
     // المعلمين
     'teachers' => 'المعلمين',
     'teachers_list' => 'قائمة المعلمين',

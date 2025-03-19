@@ -46,7 +46,11 @@ return new class extends Migration
             $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('section_id')->constrained('sections')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('parent_id')->constrained('my_parents')->cascadeOnDelete()->cascadeOnUpdate();
-            
+        });
+
+        Schema::table('fees', function(Blueprint $table){
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
+            $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
         });
     }
 
@@ -91,6 +95,11 @@ return new class extends Migration
             $table->dropForeign('students_type_classe_id_foreign');
             $table->dropForeign('students_type_section_id_foreign');
             $table->dropForeign('students_type_parent_id_foreign');
+        });
+
+        Schema::table('fees', function(Blueprint $table){
+            $table->dropForeign('fees_grade_id_foreign');
+            $table->dropForeign('fees_classe_id_foreign');
         });
     }
 };

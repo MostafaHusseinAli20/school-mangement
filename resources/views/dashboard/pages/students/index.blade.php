@@ -34,7 +34,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($students as $index => $student)
-                                              <tr>
+                                                <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $student->name }}</td>
                                                     <td>{{ $student->email }}</td>
@@ -51,7 +51,8 @@
                                                             data-target="#Delete_Student{{ $student->id }}"
                                                             title="{{ trans('grade.delete') }}"><i
                                                                 class="fa fa-trash"></i></button>
-                                                        <a href="{{ route('students.show', $student->id) }}" class="btn btn-warning btn-sm" role="button"
+                                                        <a href="{{ route('students.show', $student->id) }}"
+                                                            class="btn btn-warning btn-sm" role="button"
                                                             aria-pressed="true"><i class="far fa-eye"></i></a>
                                                     </td>
                                                 </tr>

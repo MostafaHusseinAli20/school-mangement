@@ -120,6 +120,14 @@ return [
     'model_rollback_student' => 'Are You Sure for Student Proccess Rollback ?',
     'graduate_student' => 'Graduate Student',
 
+    'student-graduate' => 'Students Graduated',
+    'add_graduate' => 'Add Graduate',
+    'list_graduates' => 'Graduated List',
+    'create_student_graduate' => 'Create Student Graduate',
+    'error_Graduated' => 'No Data in Graduated Table',
+    'message_success_restore_student' => 'Restore Graduate Student',
+    'message_delete_student_graduate' => 'Deleted Student Finaly',
+
     // Teachers
     'teachers' => 'Teachers',
     'teachers_list' => 'Teachers List',
