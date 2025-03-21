@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Interfaces\Classes\ClassesInterface;
+use App\Interfaces\Fees\FeeInterface;
 use App\Interfaces\Grades\GradeInterface;
 use App\Interfaces\Sections\SectionInterface;
 use App\Interfaces\Students\StudentGraduateInterface;
@@ -10,6 +11,7 @@ use App\Interfaces\Students\StudentInterface;
 use App\Interfaces\Students\StudentPromotionsInterface;
 use App\Interfaces\Teachers\TeacherInterface;
 use App\Repositories\Classes\ClasseRepository;
+use App\Repositories\Fees\FeeRepository;
 use App\Repositories\Grades\GradeRepository;
 use App\Repositories\Sections\SectionRepository;
 use App\Repositories\StudentPromotions\StudentPromotionRepository;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(StudentInterface::class, StudentRepository::class);
         $this->app->bind(StudentPromotionsInterface::class, StudentPromotionRepository::class);
         $this->app->bind(StudentGraduateInterface::class, StudentGraduateRepository::class);
+        $this->app->bind(FeeInterface::class, FeeRepository::class);
     }
 
     /**

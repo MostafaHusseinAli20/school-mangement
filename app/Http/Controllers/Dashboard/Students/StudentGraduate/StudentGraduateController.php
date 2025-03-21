@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class StudentGraduateController extends Controller
 {
-    public $studentGraduateInterface;
+    private $studentGraduateInterface;
 
     public function __construct(StudentGraduateInterface $studentGraduateInterface)
     {

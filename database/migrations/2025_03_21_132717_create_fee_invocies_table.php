@@ -11,22 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fees', function (Blueprint $table) {
+        Schema::create('fee_invocies', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->decimal('amount', 8, 2);
+            $table->decimal('amount',8,2);
             $table->string('description')->nullable();
-            $table->string('year');
-            $table->integer('fee_type');
-            $table->timestamps();
         });
     }
 
-    /** 
+    /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('fees');
+        Schema::dropIfExists('fee_invocies');
     }
 };

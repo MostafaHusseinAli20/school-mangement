@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
+use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
@@ -62,6 +63,9 @@ Route::group([
 
     // Graduate Students
     Route::resource('student-graduate', StudentGraduateController::class);
+
+    // Fees Routes
+    Route::resource('fees', FeeContoller::class);
 });
 
 // Livewire Routes

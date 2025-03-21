@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    public $studentInteface;
+    private $studentInteface;
 
     public function __construct(StudentInterface $studentInteface)
     {

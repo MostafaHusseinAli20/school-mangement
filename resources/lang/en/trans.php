@@ -101,6 +101,9 @@ return [
     'Delete_attachment_tilte' => 'Are You Sure Delete Attachment:',
     'Delete_attachment' => 'Delete Attachment',
     'mangement_promotion' => 'Management Students Promotions',
+    'delete_data_student' => 'Delete Student Data',
+    'edit_data_student' => 'Edit Student Data',
+    'show_data_student' => 'Show Student Data',
     
     'grade_stage_old' => 'Old Grade',
     'old_academic_year' => 'Old Academic Year',
@@ -152,6 +155,20 @@ return [
 
     // Accounts
     'accounts' => 'Accounts',
+    'study_fees' => 'Study Fees',
+    'acadmy_classe' => 'Classroom',
+    'study_year' => 'Academic Year',
+    'title_ar' => 'Name AR',
+    'title_en' => 'Name EN',
+    'amount' => 'Amount',
+    'message_added_fee' => 'Fee Added Successfuly',
+    'message_deleted_fee' => 'Fee Deleted Successfuly',
+    'message_updated_fee' => 'Fee Updated Successfuly',
+    'add_fee' => 'Add Fee',
+    'edit_fee' => 'Edit Fee',
+    'delete_proccess' => 'Are You Sure Process Delete ?',
+    'add_new_fee' => 'Add New Fee',
+    'delete_fee' => 'Delete Fee',
 
     // attendance
     'attendance' => 'Attendance',
@@ -171,7 +188,7 @@ return [
     // Users
     'users' => 'Users',
 
-     // Livewire Translation
+    // Livewire Translation
     // 'add_form' => 'اضافة نموذج',
     // 'show_form' => 'عرض النموذج',
     'father_information' => 'Father Information',

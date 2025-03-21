@@ -52,6 +52,21 @@ return new class extends Migration
             $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
             $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
         });
+        
+        Schema::table('fee_invocies', function(Blueprint $table){
+            $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
+            $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
+            $table->foreignId('fee_id')->constrained('fees')->cascadeOnDelete();
+            $table->timestamps();
+        });
+
+        Schema::table('student_accounts', function(Blueprint $table){
+            $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
+            $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -100,6 +115,19 @@ return new class extends Migration
         Schema::table('fees', function(Blueprint $table){
             $table->dropForeign('fees_grade_id_foreign');
             $table->dropForeign('fees_classe_id_foreign');
+        });
+
+        Schema::table('fee_invocies', function(Blueprint $table){
+            $table->dropForeign('fee_invocies_student_id_foreign');
+            $table->dropForeign('fee_invocies_grade_id_foreign');
+            $table->dropForeign('fee_invocies_classe_id_foreign');
+            $table->dropForeign('fee_invocies_fee_id_foreign');
+        });
+
+        Schema::table('student_accounts', function(Blueprint $table){
+            $table->dropForeign('student_accounts_student_id_foreign');
+            $table->dropForeign('student_accounts_grade_id_foreign');
+            $table->dropForeign('student_accounts_classe_id_foreign');
         });
     }
 };

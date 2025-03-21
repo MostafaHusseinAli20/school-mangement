@@ -79,7 +79,10 @@ return [
     'blood_type' => 'فصيلة الدم',
     'date_of_birth' => 'تاريخ الميلاد',
     'grade' => 'المرحلة الدراسية',
-    
+    'delete_data_student' => 'حذف بيانات الطالب',
+    'edit_data_student' => 'تعديل بيانات الطالب',
+    'show_data_student' => 'عرض بيانات الطالب',
+
     'message_added_student' => 'تم اضافة الطالب بنجاح',
     'message_update_student' => 'تم تعديل الطالب بنجاح',
     'message_delete_student' => 'تم حذف الطالب بنجاح',
@@ -153,6 +156,20 @@ return [
 
     // الحسابات
     'accounts' => 'الحسابات',
+    'study_fees' => 'الرسوم الدراسية',
+    'acadmy_classe' => 'الصف الدراسي',
+    'study_year' => 'السنة الدراسية',
+    'title_ar' => 'الاسم باللغة العربية',
+    'title_en' => 'الاسم باللغة الانجليزية',
+    'amount' => 'المبلغ',
+    'message_added_fee' => 'تم اضافة الدفع',
+    'message_deleted_fee' => 'تم حذف الدفع بنجاح',
+    'message_updated_fee' => 'تم تعديل الدفع بنجاح',
+    'add_fee' => 'اضافة رسوم دراسية',
+    'edit_fee' => 'تعديل الرسوم الدراسية',
+    'delete_proccess' => 'هل انت متاكد من عملية الحذف ؟',
+    'add_new_fee' => 'اضافة رسوم جديدة',
+    'delete_fee' => 'حذف الدفع',
 
     // الحضور و الغياب
     'attendance' => 'الحضور و الغياب',

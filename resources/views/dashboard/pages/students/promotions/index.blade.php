@@ -52,7 +52,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="academic_year">{{ trans('trans.academic_year') }} : <span
+                                    <label for="academic_year">{{ trans('trans.old_academic_year') }} : <span
                                             class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year_old">
                                         <option selected disabled>{{ trans('trans.Choose') }}...</option>
@@ -96,7 +96,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="academic_year">{{ trans('trans.academic_year') }} : <span
+                                    <label for="academic_year">{{ trans('trans.new_academic_year') }} : <span
                                             class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year_new">
                                         <option selected disabled>{{ trans('trans.Choose') }}...</option>
