@@ -170,6 +170,20 @@ return [
     'add_new_fee' => 'Add New Fee',
     'delete_fee' => 'Delete Fee',
 
+    // Fee Invoices
+    'list_fees_invoices' => 'List Fees Invoices',
+    'add_fee_invoice' => 'Add Fee Invoice',
+    'student_name' => 'Student Name',
+    'fee_type' => 'Fee Type',
+    'statement' => 'Statement',
+    'sure_data' => 'Save Data',
+    'message_added_fee_invoice' => 'Fee Invoice Added Successfuly',
+    'message_deleted_fee_invoice' => 'Fee Invoice Has Deleted',
+    'message_updated_fee_invoice' => 'Fee Invoice Has Updated',
+    'delete_invoice' => 'Delete Invoice',
+    'fee_invoice_edit' => 'Edit Fee Invoice',
+    'list_invoices' => 'List Invocies',
+
     // attendance
     'attendance' => 'Attendance',
 

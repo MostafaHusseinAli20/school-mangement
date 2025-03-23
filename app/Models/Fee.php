@@ -19,4 +19,9 @@ class Fee extends Model
     {
         return $this->belongsTo(Classe::class, 'classe_id');
     }
+
+    public function students()
+    {
+        return $this->belongsTo(Student::class, 'student_id');
+    }
 }

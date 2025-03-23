@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Fees\FeeContoller;
+use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
@@ -66,6 +67,10 @@ Route::group([
 
     // Fees Routes
     Route::resource('fees', FeeContoller::class);
+
+    // Fee Invoices Routes
+    Route::resource('fee-invoices', FeeInvoiceController::class);
+    // Route::get('fee_type/{fee_id}', [FeeInvoiceController::class, 'getAmount']);
 });
 
 // Livewire Routes

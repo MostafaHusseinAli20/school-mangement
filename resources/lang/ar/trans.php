@@ -171,6 +171,20 @@ return [
     'add_new_fee' => 'اضافة رسوم جديدة',
     'delete_fee' => 'حذف الدفع',
 
+    // فواتير الرسوم
+    'list_fees_invoices' => 'قائمة فواتير الدفع',
+    'add_fee_invoice' => 'اضافة فاتورة رسوم',
+    'student_name' => 'اسم الطالب',
+    'fee_type' => 'نوع الدفع',
+    'statement' => 'البيان',
+    'sure_data' => 'تاكيد البيانات',
+    'message_added_fee_invoice' => 'تم اضافة فاتورة الدفع بنجاح',
+    'message_deleted_fee_invoice' => 'تم حذف فاتورة الدفع',
+    'message_updated_fee_invoice' => 'تم تعديل فاتورة الدفع',
+    'delete_invoice' => 'حذف فاتورة',
+    'fee_invoice_edit' => 'تعديل فاتورة الدفع',
+    'list_invoices' => 'قائمة الفواتير',
+
     // الحضور و الغياب
     'attendance' => 'الحضور و الغياب',
 

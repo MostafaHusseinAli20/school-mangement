@@ -76,7 +76,7 @@
                             </div>
 
                             <div class="form-group col">
-                                <label for="inputState">{{ trans('trans.Fee_Type') }}</label>
+                                <label for="inputState">{{ trans('trans.fee_type') }}</label>
                                 <select class="custom-select mr-sm-2" name="fee_type">
                                     <option selected disabled>{{trans('trans.Choose')}}...</option>
                                     

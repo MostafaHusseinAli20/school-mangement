@@ -28,7 +28,7 @@ class FeeRequest extends FormRequest
             'description' => 'nullable|string',
             'year' => 'required',
             'grade_id' => 'required|integer|exists:grades,id',
-            'classe_id' => 'required|integer|unique:fees,classe_id,' . $this->id
+            'classe_id' => 'required|integer|exists:classes,id'
         ];
     }
 }

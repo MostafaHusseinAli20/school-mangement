@@ -157,7 +157,7 @@
 
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="academic_year">{{ trans('trans.academic_year') }} : <span
+                                    <label for="academic_year">{{ trans('trans.study_year') }} : <span
                                             class="text-danger">*</span></label>
                                     <select class="custom-select mr-sm-2" name="academic_year">
                                         <option selected disabled>{{ trans('trans.Choose') }}...</option>
