@@ -63,7 +63,7 @@ return new class extends Migration
 
         Schema::table('student_accounts', function(Blueprint $table){
             $table->foreignId('student_id')->constrained('students')->cascadeOnDelete();
-            $table->foreignId('receipt_id')->constrained('receipt_students')->cascadeOnDelete();
+            $table->foreignId('receipt_id')->nullable()->constrained('receipt_students')->cascadeOnDelete();
             $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
             $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
             $table->timestamps();
