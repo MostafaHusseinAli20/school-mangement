@@ -44,7 +44,6 @@ class FeeInvoiceRepository implements FeeInvoiceInterface
                     'classe_id' => $request->classe_id,
                     'debit' => $List_Fee['amount'],
                     'credit' => 0.00,
-                    'receipt_id' => 3, // 3 is the default value
                     'description' => $List_Fee['description']
                 ]);
             }
