@@ -184,6 +184,17 @@ return [
     'fee_invoice_edit' => 'Edit Fee Invoice',
     'list_invoices' => 'List Invocies',
 
+    // Receipts
+    'receipt' => 'Receipt',
+    'create_receipt' => 'Create Receipt',
+    'edit_receipt' => 'Edit Receipt',
+    'list_receipt' => 'List Receipts',
+    'message_added_receipt' => 'Receipt Added Successfuly',
+    'message_deleted_receipt' => 'Receipt Deleted Successfuly',
+    'message_updated_receipt' => 'Receipt Updated Successfuly',
+    'delete_receipt' => 'Delete Receipt',
+    'warning_receipt' => 'Do You Want Delete This Receipt!',
+
     // attendance
     'attendance' => 'Attendance',
 

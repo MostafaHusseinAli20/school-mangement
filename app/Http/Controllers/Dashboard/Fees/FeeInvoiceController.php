@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class FeeInvoiceController extends Controller
 {
-    protected $feeInvoiceInterface;
+    private $feeInvoiceInterface;
 
     public function __construct(FeeInvoiceInterface $feeInvoiceInterface)
     {

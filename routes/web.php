@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
+use App\Http\Controllers\Dashboard\Students\ReceiptStudents\ReceiptStudentController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Students\StudentGraduate\StudentGraduateController;
 use App\Http\Controllers\Dashboard\Teachers\TeachersController;
@@ -70,7 +71,9 @@ Route::group([
 
     // Fee Invoices Routes
     Route::resource('fee-invoices', FeeInvoiceController::class);
-    // Route::get('fee_type/{fee_id}', [FeeInvoiceController::class, 'getAmount']);
+
+    // Receipt Students
+    Route::resource('student-receipt', ReceiptStudentController::class);
 });
 
 // Livewire Routes

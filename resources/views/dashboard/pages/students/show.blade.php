@@ -56,7 +56,7 @@
                                         <tr>
                                             <th scope="row">{{trans('trans.parent')}}</th>
                                             <td>{{ $student->myParent->name_father}}</td>
-                                            <th scope="row">{{trans('trans.academic_year')}}</th>
+                                            <th scope="row">{{trans('trans.study_year')}}</th>
                                             <td>{{ $student->academic_year }}</td>
                                             <th scope="row"></th>
                                             <td></td>

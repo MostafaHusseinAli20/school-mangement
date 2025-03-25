@@ -126,6 +126,7 @@
                         <ul id="Accounts-menu" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{ route('fees.index') }}">{{ trans('trans.study_fees') }}</a> </li>
                             <li> <a href="{{ route('fee-invoices.index') }}">{{ trans('trans.list_invoices') }}</a> </li>
+                            <li> <a href="{{route('student-receipt.index')}}">{{ trans('trans.receipt') }}</a> </li>
                         </ul>
                     </li>
 

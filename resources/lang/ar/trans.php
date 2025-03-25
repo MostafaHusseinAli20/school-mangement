@@ -185,6 +185,17 @@ return [
     'fee_invoice_edit' => 'تعديل فاتورة الدفع',
     'list_invoices' => 'قائمة الفواتير',
 
+    // سند القبض
+    'receipt' => 'سند قبض',
+    'create_receipt' => 'اضافة سند قبض',
+    'edit_receipt' => 'تعديل سند قبض',
+    'list_receipt' => 'قائمة سندات القبض',
+    'message_added_receipt' => 'تم اضافة سند القبض بنجاح',
+    'message_deleted_receipt' => 'تم حذف سند القبض بنجاح',
+    'message_updated_receipt' => 'تم تعديل سند القبض بنجاح',
+    'delete_receipt' => 'حذف سند قبض',
+    'warning_receipt' => 'هل تريد حذف سند القبض!',
+
     // الحضور و الغياب
     'attendance' => 'الحضور و الغياب',
 

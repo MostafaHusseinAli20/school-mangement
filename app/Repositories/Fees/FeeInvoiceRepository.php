@@ -38,11 +38,13 @@ class FeeInvoiceRepository implements FeeInvoiceInterface
 
                 // Save Data in Student Accaounts Table
                 StudentAccounts::create([
+                    'date' => date('Y-m-d'),
                     'student_id' => $List_Fee['student_id'],
                     'grade_id' => $request->grade_id,
                     'classe_id' => $request->classe_id,
                     'debit' => $List_Fee['amount'],
                     'credit' => 0.00,
+                    'receipt_id' => 3, // 3 is the default value
                     'description' => $List_Fee['description']
                 ]);
             }
