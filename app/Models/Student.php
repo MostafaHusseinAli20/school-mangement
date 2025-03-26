@@ -43,6 +43,11 @@ class Student extends Model
         return $this->belongsTo(Nationality::class, 'nationality_id');
     }
 
+    public function student_account()
+    {
+        return $this->hasMany(StudentAccounts::class, 'student_id');
+    }
+
     // Realtion Between Student with Image (Polymorphic)
     public function images()
     {

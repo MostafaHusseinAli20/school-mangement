@@ -195,6 +195,20 @@ return [
     'delete_receipt' => 'Delete Receipt',
     'warning_receipt' => 'Do You Want Delete This Receipt!',
 
+    // Processing Fees
+    'processing_fees' => 'Processing Fees',
+    'list_processing_fees' => 'List Processing Fees',
+    'add_processing_fee' => 'Add Processing Fee',
+    'edit_processing_fee' => 'Edit Processing Fee',
+    'message_added_processing_fee' => 'Processing Fee Added Successfuly',
+    'message_deleted_processing_fee' => 'Processing Fee Deleted Successfuly',
+    'message_updated_processing_fee' => 'Processing Fee Updated Successfuly',
+    'exclude_fees' => 'Exclude Fees',
+    'edit_exclude_fees' => 'Edit Exclude Fees',
+    'student_balance' => 'Student Balance',
+    'delete_processing_fee' => 'Delete Processing Fee',
+    'warning_processing_fee' => 'Do You Want Delete This Processing Fee!',
+
     // attendance
     'attendance' => 'Attendance',
 

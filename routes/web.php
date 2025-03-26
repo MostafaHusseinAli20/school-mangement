@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
+use App\Http\Controllers\Dashboard\Fees\ProcessingFeeController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
@@ -74,6 +75,9 @@ Route::group([
 
     // Receipt Students
     Route::resource('student-receipt', ReceiptStudentController::class);
+
+    // Processing Fees
+    Route::resource('processing-fees', ProcessingFeeController::class);
 });
 
 // Livewire Routes

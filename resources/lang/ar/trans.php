@@ -196,6 +196,20 @@ return [
     'delete_receipt' => 'حذف سند قبض',
     'warning_receipt' => 'هل تريد حذف سند القبض!',
 
+    // عملية معالجة الدفع
+    'processing_fees' => 'عملية معالجة الدفع',
+    'list_processing_fees' => 'قائمة عملية معالجة الدفع',
+    'add_processing_fee' => 'اضافة عملية معالجة الدفع',
+    'edit_processing_fee' => 'تعديل عملية معالجة الدفع',
+    'message_added_processing_fee' => 'تم اضافة عملية معالجة الدفع بنجاح',
+    'message_deleted_processing_fee' => 'تم حذف عملية معالجة الدفع بنجاح',
+    'message_updated_processing_fee' => 'تم تعديل عملية معالجة الدفع بنجاح',
+    'exclude_fees' => 'استبعاد رسوم',
+    'edit_exclude_fees' => 'تعديل استبعاد الرسوم',
+    'student_balance' => 'رصيد الطالب',
+    'delete_processing_fee' => 'حذف رسوم معالجة',
+    'warning_processing_fee' => 'هل تريد حذف عملية معالجة الدفع!',
+    
     // الحضور و الغياب
     'attendance' => 'الحضور و الغياب',
 

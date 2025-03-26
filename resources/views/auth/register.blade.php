@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="d-flex text-center justify-content-center">
                                     <h6 class="text-secondary"> هل لديك حساب بالفعل اذهب الي <i class="fa fa-arrow-left"> </i> </h6>
-                                    <a class="ml-1 pt-1 text-primary" href="{{ route('login') }}">Login</a>
+                                    <a class="ml-1 pt-1" style="color: #84ba3f" href="{{ route('login') }}">Login</a>
                                 </div>
                                 
                                 <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>

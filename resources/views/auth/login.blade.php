@@ -98,7 +98,7 @@
 
                                 <div class="d-flex text-center justify-content-center">
                                     <h6 class="text-secondary"> اذا ليس لديك حساب اذهب الي <i class="fa fa-arrow-left"> </i> </h6>
-                                    <a class="ml-1 pt-1 text-primary" href="{{ route('register') }}">Register</a>
+                                    <a class="ml-1 pt-1" style="color: #84ba3f" href="{{ route('register') }}">Register</a>
                                 </div>
 
                                 <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>
