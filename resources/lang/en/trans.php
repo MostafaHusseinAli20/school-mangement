@@ -211,6 +211,10 @@ return [
 
     // attendance
     'attendance' => 'Attendance',
+    'list_attendances' => 'List Attendances',
+    'absent' => 'Absence',
+    'presence' => 'Presence',
+    'day_date' => 'Day Date',
 
     // exams
     'exams' => 'Exams',

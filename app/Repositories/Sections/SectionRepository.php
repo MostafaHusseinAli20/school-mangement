@@ -16,7 +16,7 @@ class SectionRepository implements SectionInterface
     public function index()
     {
         $grades = Grade::with(['sections'])->get();
-        $list_grades = Grade::all();
+        $list_grades = Grade::get();
         $teachers = Teacher::get();
         return view('dashboard.pages.Sections.index', compact('grades', 'list_grades', 'teachers'));
     }

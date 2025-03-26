@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
@@ -78,6 +79,9 @@ Route::group([
 
     // Processing Fees
     Route::resource('processing-fees', ProcessingFeeController::class);
+
+    // Attendance Routes
+    Route::resource('attendances', AttendanceController::class);
 });
 
 // Livewire Routes
