@@ -216,7 +216,22 @@ return [
     'absent' => 'غياب',
     'presence' => 'حضور',
     'day_date' => 'تاريخ اليوم',
+    'message_attendence' => 'تم اضافة الحضور و الغياب بنجاح',
 
+    // المواد الدراسية
+    'subjects' => 'المواد الدراسية',
+    'subjects_list' => 'قائمة المواد الدراسية',
+    'add_subject' => 'اضافة مادة دراسية',
+    'subject_name_ar' => 'اسم المادة بالعربي',
+    'subject_name_en' => 'اسم المادة بالانجليزي',
+    'subject_name' => 'اسم المادة',
+    'subject_name_class' => 'اسم المادة للصف',
+    'message_added_subject' => 'تم اضافة المادة الدراسية بنجاح',
+    'message_updated_subject' => 'تم تعديل المادة الدراسية بنجاح',
+    'message_deleted_subject' => 'تم حذف المادة الدراسية بنجاح',
+    'delete_subject' => 'حذف المادة الدراسية',
+    'edit_subject' => 'تعديل المواد الدراسية',
+    
     // الامتحانات
     'exams' => 'الامتحانات',
 

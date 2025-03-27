@@ -215,6 +215,21 @@ return [
     'absent' => 'Absence',
     'presence' => 'Presence',
     'day_date' => 'Day Date',
+    'message_attendence' => 'Attendance Added Successfuly',
+
+    // Subjects
+    'subjects' => 'Subjects',
+    'subjects_list' => 'Subjects List',
+    'add_subject' => 'Add Subject',
+    'subject_name_ar' => 'Subject Name AR',
+    'subject_name_en' => 'Subject Name EN',
+    'subject_name' => 'Subject Name',
+    'subject_name_class' => 'Subject Name Class',
+    'message_added_subject' => 'Added Subject Successfuly',
+    'message_updated_subject' => 'Updated Subject Successfuly',
+    'message_deleted_subject' => 'Deleted Subject Successfuly',
+    'delete_subject' => 'Delete Subject',
+    'edit_subject' => 'Edit Subject',
 
     // exams
     'exams' => 'Exams',

@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\Sections\SectionsController;
 use App\Http\Controllers\Dashboard\Students\ReceiptStudents\ReceiptStudentController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Students\StudentGraduate\StudentGraduateController;
+use App\Http\Controllers\Dashboard\Subjects\SubjectController;
 use App\Http\Controllers\Dashboard\Teachers\TeachersController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -82,6 +83,9 @@ Route::group([
 
     // Attendance Routes
     Route::resource('attendances', AttendanceController::class);
+
+    // Subjects Routes
+    Route::resource('subjects', SubjectController::class);
 });
 
 // Livewire Routes

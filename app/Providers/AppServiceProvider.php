@@ -13,6 +13,7 @@ use App\Interfaces\Students\ReceiptStudentInterface;
 use App\Interfaces\Students\StudentGraduateInterface;
 use App\Interfaces\Students\StudentInterface;
 use App\Interfaces\Students\StudentPromotionsInterface;
+use App\Interfaces\Subjects\SubjectInterface;
 use App\Interfaces\Teachers\TeacherInterface;
 use App\Repositories\Attendances\AttendanceRepository;
 use App\Repositories\Classes\ClasseRepository;
@@ -25,6 +26,7 @@ use App\Repositories\StudentPromotions\StudentPromotionRepository;
 use App\Repositories\Students\ReceiptStudent\ReceiptStudentRepository;
 use App\Repositories\Students\StudentGraduate\StudentGraduateRepository;
 use App\Repositories\Students\StudentRepository;
+use App\Repositories\Subjects\SubjectRepository;
 use App\Repositories\Teachers\TeacherRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -47,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(ReceiptStudentInterface::class, ReceiptStudentRepository::class);
         $this->app->bind(ProcessingFeeInterface::class, ProcessingFeeRepository::class);
         $this->app->bind(AttendanceInterface::class, AttendanceRepository::class);
+        $this->app->bind(SubjectInterface::class, SubjectRepository::class);
     }
 
     /**
