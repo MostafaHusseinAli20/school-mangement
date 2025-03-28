@@ -231,8 +231,25 @@ return [
     'delete_subject' => 'Delete Subject',
     'edit_subject' => 'Edit Subject',
 
+    'choose_exam' => 'Choose Exam',
+
     // exams
     'exams' => 'Exams',
+    'list_exams' => 'List Exams',
+    'add_exam' => 'Add Exam',
+    'exam_name' => 'Exam Name',
+    'exam_name_ar' => 'Exam Name AR',
+    'exam_name_en' => 'Exam Name EN',
+    'exam_date' => 'Exam Date',
+    'exam_time' => 'Exam Time',
+    'exam_grade' => 'Exam Grade',
+    'exam_class' => 'Exam Class',
+    'term' => 'Term',
+    'delete_exam' => 'Delete Exam',
+    'message_added_exam' => 'Exam Added Successfuly',
+    'message_updated_exam' => 'Exam Updated Successfuly',
+    'message_deleted_exam' => 'Exam Deleted Successfuly',
+    'edit_exam' => 'Edit Exam',
 
     //library
     'library' => 'Library',

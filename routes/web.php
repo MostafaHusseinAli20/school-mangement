@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
+use App\Http\Controllers\Dashboard\Exams\ExamController;
 use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Fees\ProcessingFeeController;
@@ -86,6 +87,13 @@ Route::group([
 
     // Subjects Routes
     Route::resource('subjects', SubjectController::class);
+
+    // Choose Exam Route
+    Route::view('choose-exam', 'dashboard.pages.exams.choose_exam')->name('choose_exam');
+
+    // Exams Routes
+    Route::resource('exams', ExamController::class);
+
 });
 
 // Livewire Routes
