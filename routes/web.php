@@ -3,6 +3,7 @@
 use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Exams\ExamController;
+use App\Http\Controllers\Dashboard\Exams\QuizzeController;
 use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Fees\ProcessingFeeController;
@@ -93,6 +94,7 @@ Route::group([
 
     // Exams Routes
     Route::resource('exams', ExamController::class);
+    Route::resource('quizzes', QuizzeController::class);
 
 });
 

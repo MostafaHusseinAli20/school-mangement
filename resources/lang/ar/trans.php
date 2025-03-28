@@ -252,6 +252,22 @@ return [
     'message_deleted_exam' => 'تم حذف الامتحان بنجاح',
     'edit_exam' => 'تعديل الامتحان',
     
+    // الاختبارات
+    'quizzes' => 'الاختبارات',
+    'quizzes_list' => 'قائمة الاختبارات',
+    'add_quizze' => 'اضافة اختبار',
+    'edit_quizze' => 'تعديل اختبار',
+    'quizze_name' => 'اسم الاختبار',
+    'quizze_name_ar' => 'اسم الاختبار بالعربي',
+    'quizze_name_en' => 'اسم الاختبار بالانجليزي',
+    'quizze_date' => 'تاريخ الاختبار',
+    'quizze_time' => 'وقت الاختبار',
+    'subject_material' => 'المادة الدراسية',
+    'message_added_quizze' => 'تم اضافة الاختبار بنجاح',
+    'message_updated_quizze' => 'تم تعديل الاختبار بنجاح',
+    'message_deleted_quizze' => 'تم حذف الاختبار بنجاح',
+    'delete_quizze' => 'حذف الاختبار',
+    
     //المكتبة
     'library' => 'المكتبة',
 

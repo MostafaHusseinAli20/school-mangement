@@ -251,6 +251,22 @@ return [
     'message_deleted_exam' => 'Exam Deleted Successfuly',
     'edit_exam' => 'Edit Exam',
 
+    // Quizzes
+    'quizzes' => 'Quizzes',
+    'quizzes_list' => 'Quizzes List',
+    'add_quizze' => 'Add Quizze',
+    'edit_quizze' => 'Edit Quizze',
+    'quizze_name' => 'Quizze Name',
+    'quizze_name_ar' => 'Quizze Name AR',
+    'quizze_name_en' => 'Quizze Name EN',
+    'quizze_date' => 'Quizze Date',
+    'quizze_time' => 'Quizze Time',
+    'subject_material' => 'Subject Material',
+    'message_added_quizze' => 'Quizze Added Successfuly',
+    'message_updated_quizze' => 'Quizze Updated Successfuly',
+    'message_deleted_quizze' => 'Quizze Deleted Successfuly',
+    'delete_quizze' => 'Delete Quizze',
+
     //library
     'library' => 'Library',
 

@@ -20,7 +20,7 @@
             </div>
         </a>
 
-        <a href="#" class="card w-25">
+        <a href="{{ route('quizzes.index') }}" class="card w-25">
             <img src="{{ asset('assets/images/NewFolder/img_avatar2.png') }}" alt="Avatar" style="width:100%">
             <div class="container">
                 <h4 class="mt-3" style="font-family: 'Cairo', sans-serif;"><b>امتحانات اونلاين</b></h4>
