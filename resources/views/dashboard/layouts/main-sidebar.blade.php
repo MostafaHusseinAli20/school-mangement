@@ -199,6 +199,7 @@
                         </a>
                         <ul id="Exams-icon" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{ route('choose_exam') }}">{{ trans('trans.list_exams') }}</a> </li>
+                            <li> <a href="{{ route('questions.index') }}">{{ trans('trans.questions_list') }}</a> </li>
                         </ul>
                     </li>
 

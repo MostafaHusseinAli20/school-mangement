@@ -267,6 +267,25 @@ return [
     'message_deleted_quizze' => 'Quizze Deleted Successfuly',
     'delete_quizze' => 'Delete Quizze',
 
+    // Questions
+    'questions' => 'Questions',
+    'question' => 'Question',
+    'questions_list' => 'Questions List',
+    'add_question' => 'Add Question',
+    'edit_question' => 'Edit Question',
+    'question_name' => 'Question Name',
+    'question_name_ar' => 'Question Name AR',
+    'question_name_en' => 'Question Name EN',
+    'question_answer' => 'Question Answer',
+    'question_degree' => 'Question Degree',
+    'answers' => 'Answers',
+    'answer' => 'Answer',
+    'right_answer' => 'Right Answer',
+    'message_added_question' => 'Question Added Successfuly',
+    'message_updated_question' => 'Question Updated Successfuly',
+    'message_deleted_question' => 'Question Deleted Successfuly',
+    'delete_question' => 'Delete Question',
+
     //library
     'library' => 'Library',
 

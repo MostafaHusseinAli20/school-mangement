@@ -268,6 +268,25 @@ return [
     'message_deleted_quizze' => 'تم حذف الاختبار بنجاح',
     'delete_quizze' => 'حذف الاختبار',
     
+    // الاسئلة
+    'questions' => 'الاسئلة',
+    'question' => 'السؤال',
+    'questions_list' => 'قائمة الاسئلة',
+    'add_question' => 'اضافة سؤال',
+    'edit_question' => 'تعديل سؤال',
+    'question_name' => 'اسم السؤال',
+    'question_name_ar' => 'اسم السؤال بالعربي',
+    'question_name_en' => 'اسم السؤال بالانجليزي',
+    'question_answer' => 'اجابة السؤال',
+    'question_degree' => 'درجة السؤال',
+    'answers' => 'الاجابات',
+    'answer' => 'اجابة',
+    'right_answer' => 'الاجابة الصحيحة',
+    'message_added_question' => 'تم اضافة السؤال بنجاح',
+    'message_updated_question' => 'تم تعديل السؤال بنجاح',
+    'message_deleted_question' => 'تم حذف السؤال بنجاح',
+    'delete_question' => 'حذف السؤال',
+    
     //المكتبة
     'library' => 'المكتبة',
 
