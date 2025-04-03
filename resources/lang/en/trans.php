@@ -146,6 +146,7 @@ return [
     'message_updated_teacher' => 'Teacher Updated Successfuly',
     'message_deleted_teacher' => 'Teacher Deleted Successfuly',
     'edit_teacher' => 'Edit Teacher',
+    'teacher' => 'Teacher',
 
     // Parents
     'parents' => 'Parents',
@@ -291,6 +292,36 @@ return [
 
     // Online Classes
     'onlineclasses' => 'Online Classes',
+    'onlineclasses_list' => 'Online Classes List',
+    'add_onlineclass' => 'Add Online Class',
+    'edit_onlineclass' => 'Edit Online Class',
+    'onlineclass_name' => 'Online Class Name',
+    'onlineclass_name_ar' => 'Online Class Name AR',
+    'onlineclass_name_en' => 'Online Class Name EN',
+    'onlineclass_date' => 'Online Class Date',
+    'onlineclass_time' => 'Online Class Time',
+    'onlineclass_grade' => 'Online Class Grade',
+    'onlineclass_class' => 'Online Class Class',
+    'onlineclass_term' => 'Online Class Term',
+    'onlineclass_link' => 'Online Class Link',
+    'onlineclass_duration' => 'Online Class Duration',
+    'onlineclass_zoom_id' => 'Online Class Zoom ID',
+    'onlineclass_zoom_password' => 'Online Class Zoom Password',
+    'message_added_onlineclass' => 'Online Class Added Successfuly',
+    'message_updated_onlineclass' => 'Online Class Updated Successfuly',
+    'message_deleted_onlineclass' => 'Online Class Deleted Successfuly',
+    'delete_onlineclass' => 'Delete Online Class',
+    'online_direct' => 'Online Direct with Zoom',
+    'online_indirect' => 'Online Indirect',
+    'join_now' => 'Join Now',
+    'stage' => 'Stage',
+    'class' => 'Class',
+    'lesson_address' => 'Lesson Address',
+    'onlineclass_meeting_id' => 'Meeting Number',
+    'onlineclass_password' => 'Meeting Password',
+    'onlineclasses_indirect_create' => 'Create Indirect Zoom Meeting',
+    'onlineclass_type' => 'Link Type',
+    'add_indirect_onlineclass' => 'Add Offline Class',
 
     //Settings
     'settings' => 'Settings',
@@ -306,6 +337,7 @@ return [
     'confirm_information' => 'Confirm Information and Attachments',
     'finish' => 'Finish',
     'save_data' => 'Are You Sure Save Data ?',
+    'delete_data' => 'Are You Sure Process Delete ?',
     'Name_Father' => 'Name Father AR',
     'Name_Father_en' => 'Name Father EN',
     'Job_Father' => 'Job Father AR',
@@ -323,6 +355,8 @@ return [
     'Next' => 'Next',
     'Back' => 'Bcak',
     'back_parent_list' => 'Back to Parent List',
+    'start_url' => 'Start Url',
+    'join_url' => 'Join Url for Students',
 
     // Mother Information
     'Name_Mother' => 'Name Mother AR',

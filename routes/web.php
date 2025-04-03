@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Fees\ProcessingFeeController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
+use App\Http\Controllers\Dashboard\OnlineClasses\OnlineClasseController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
 use App\Http\Controllers\Dashboard\Students\ReceiptStudents\ReceiptStudentController;
@@ -98,6 +99,10 @@ Route::group([
     Route::resource('quizzes', QuizzeController::class);
     Route::resource('questions', QuestionController::class);
 
+    // Online Classes Routes
+    Route::resource('online_classes', OnlineClasseController::class);
+    Route::get('online_classe/indirect', [OnlineClasseController::class, 'indirectCreate'])->name('online.indirect_create');
+    Route::post('online_classe/indirect/store', [OnlineClasseController::class, 'indirectStore'])->name('online.indirect_store');
 });
 
 // Livewire Routes

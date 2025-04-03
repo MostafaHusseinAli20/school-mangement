@@ -147,6 +147,7 @@ return [
     'message_updated_teacher' => 'تم تعديل المعلم بنجاح',
     'message_deleted_teacher' => 'تم حذف المعلم بنجاح',
     'edit_teacher' => 'تعديل المعلم',
+    'teacher' => 'المعلم',
 
     // اولياء الامور
     'parents' => 'اولياء الامور',
@@ -292,6 +293,38 @@ return [
 
     // حصص اونلاين
     'onlineclasses' => 'حصص اونلاين',
+    'onlineclasses_list' => 'قائمة الحصص اونلاين',
+    'add_onlineclass' => 'اضافة حصة اونلاين',
+    'edit_onlineclass' => 'تعديل حصة اونلاين',
+    'onlineclass_name' => 'اسم الحصة اونلاين',
+    'onlineclass_name_ar' => 'اسم الحصة اونلاين بالعربي',
+    'onlineclass_name_en' => 'اسم الحصة اونلاين بالانجليزي',
+    'onlineclass_date' => 'تاريخ الحصة',
+    'onlineclass_time' => 'وقت الحصة بالدقائق',
+    'onlineclass_grade' => 'المرحلة الدراسية',
+    'onlineclass_class' => 'الصف الدراسي',
+    'onlineclass_term' => 'الفصل الدراسي',
+    'onlineclass_link' => 'رابط الحصة',
+    'onlineclass_password' => 'كلمة مرور الحصة اونلاين',
+    'onlineclass_meeting_id' => 'رقم اجتماع الحصة اونلاين',
+    'onlineclass_duration' => 'مدة الحصة اونلاين',
+    'onlineclass_zoom_id' => 'رقم الحساب',
+    'onlineclass_zoom_password' => 'كلمة مرور الحساب',
+    'message_added_onlineclass' => 'تم اضافة الحصة اونلاين بنجاح',
+    'message_updated_onlineclass' => 'تم تعديل الحصة اونلاين بنجاح',
+    'message_deleted_onlineclass' => 'تم حذف الحصة اونلاين بنجاح',
+    'delete_onlineclass' => 'حذف الحصة اونلاين',
+    'online_direct' => 'الدخول المباشر عبر زوم',
+    'join_now' => 'انضم الان',
+    'stage' => 'المرحلة',
+    'class' => 'الصف',
+    'lesson_address' => 'عنوان الحصة',
+    'online_indirect' => 'الدخول غير المباشر',
+    'start_url' => 'لينك البدء',
+    'join_url' => 'لينك الدخول للطلاب',
+    'onlineclasses_indirect_create' => 'اضافة حصة غير مباشرة مع زوم',
+    'onlineclass_type' => 'نوع الربط',
+    'add_indirect_onlineclass' => 'اضافة حصة اوفلاين جديدة',
 
     //الاعدادات
     'settings' => 'الاعدادات',
@@ -327,6 +360,7 @@ return [
     'Next' => 'التالي',
     'Back' => 'السابق',
     'save_data' => 'هل انت متأكد من حفظ البيانات',
+    'delete_data' => 'هل انت متأكد من عملية الحذف ؟',
     'back_parent_list' => 'العودة للقائمة',
 
     // Mother Information

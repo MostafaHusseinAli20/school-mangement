@@ -78,6 +78,14 @@ return new class extends Migration
             $table->foreignId('teacher_id')->constrained('teachers')->cascadeOnDelete();
             $table->timestamps();
         });
+
+        Schema::table('online_classes', function(Blueprint $table){
+            $table->foreignId('grade_id')->constrained('grades')->cascadeOnDelete();
+            $table->foreignId('classe_id')->constrained('classes')->cascadeOnDelete();
+            $table->foreignId('section_id')->constrained('sections')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -149,6 +157,13 @@ return new class extends Migration
             $table->dropForeign('attendances_classe_id_foreign');
             $table->dropForeign('attendances_section_id_foreign');
             $table->dropForeign('attendances_teacher_id_foreign');
+        });
+
+        Schema::table('online_classes', function(Blueprint $table){
+            $table->dropForeign('attendances_grade_id_foreign');
+            $table->dropForeign('attendances_classe_id_foreign');
+            $table->dropForeign('attendances_section_id_foreign');
+            $table->dropForeign('attendances_user_id_foreign');
         });
     }
 };
