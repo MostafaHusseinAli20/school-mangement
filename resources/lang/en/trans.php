@@ -3,6 +3,7 @@
 return [
     'school_mangement_system' => 'School Mangement System',
     'main' => 'Main Page',
+    'features' => 'Features',
 
     // Grades
     'acadmic_year' => 'Acadmic Year',
@@ -289,6 +290,18 @@ return [
 
     //library
     'library' => 'Library',
+    'library_list' => 'Books List',
+    'book_name' => 'Book Name',
+    'add_new_book' => 'Add New Book',
+    'create_book' => 'Add Book',
+    'message_added_library' => 'Book Added Successfuly',
+    'message_updated_library' => 'Book Updated Successfuly',
+    'message_deleted_library' => 'Book Deleted Successfuly',
+    'delete_book' => 'Delete Book',
+    'download_book' => 'Download Book',
+    'edit_book' => 'Edit Book',
+    'file_book' => 'File Book',
+    'show_book' => 'Show Book',
 
     // Online Classes
     'onlineclasses' => 'Online Classes',
@@ -325,6 +338,15 @@ return [
 
     //Settings
     'settings' => 'Settings',
+    'update_setting_data' => 'Updated Data Successfuly',
+    'school_name' => 'School Name',
+    'current_year' => 'Current Year',
+    'school_name_summary' => 'School Name Summary',
+    'phone' => 'Phone',
+    'school_address' => 'School Address',
+    'end_first_term' => 'End First Term',
+    'end_second_term' => 'End Second Term',
+    'school_logo' => 'School Logo',
 
     // Users
     'users' => 'Users',

@@ -9,9 +9,11 @@ use App\Http\Controllers\Dashboard\Fees\FeeContoller;
 use App\Http\Controllers\Dashboard\Fees\FeeInvoiceController;
 use App\Http\Controllers\Dashboard\Fees\ProcessingFeeController;
 use App\Http\Controllers\Dashboard\Grade\GradeController;
+use App\Http\Controllers\Dashboard\Library\LibraryController;
 use App\Http\Controllers\Dashboard\OnlineClasses\OnlineClasseController;
 use App\Http\Controllers\Dashboard\StudentPromotions\StudentPromotionsController;
 use App\Http\Controllers\Dashboard\Sections\SectionsController;
+use App\Http\Controllers\Dashboard\Settings\SettingController;
 use App\Http\Controllers\Dashboard\Students\ReceiptStudents\ReceiptStudentController;
 use App\Http\Controllers\Dashboard\Students\StudentController;
 use App\Http\Controllers\Dashboard\Students\StudentGraduate\StudentGraduateController;
@@ -103,6 +105,15 @@ Route::group([
     Route::resource('online_classes', OnlineClasseController::class);
     Route::get('online_classe/indirect', [OnlineClasseController::class, 'indirectCreate'])->name('online.indirect_create');
     Route::post('online_classe/indirect/store', [OnlineClasseController::class, 'indirectStore'])->name('online.indirect_store');
+
+    // Library Routes
+    Route::resource('library', LibraryController::class);
+    Route::get('download_file/{filename}', [LibraryController::class, 'download'])->name('downloadAttachment');
+    Route::get('show_file/{filename}', [LibraryController::class, 'open_file'])->name('openFile');
+
+    // Settings Routes
+    Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::put('settings/{id}/update', [SettingController::class, 'update'])->name('settings.update');
 });
 
 // Livewire Routes

@@ -3,6 +3,7 @@
 return [
     'school_mangement_system' =>  'نظام ادارة المدراس',
     'main' => 'الرئيسية',
+    'features' => 'خصائص',
 
     // المراحل الدراسية
     'acadmic_year' => 'المراحل الدراسية',
@@ -290,7 +291,19 @@ return [
     
     //المكتبة
     'library' => 'المكتبة',
-
+    'library_list' => 'قائمة الكتب',
+    'book_name' => 'اسم الكتاب',
+    'add_new_book' => 'اضافة كتاب جديد',
+    'create_book' => 'اضافة كتاب',
+    'message_added_library' => 'تم اضافة الكتاب بنجاح',
+    'message_updated_library' => 'تم تعديل الكتاب بنجاح',
+    'message_deleted_library' => 'تم حذف الكتاب بنجاح',
+    'delete_book' => 'حذف كتاب',
+    'download_book' => 'تحميل الكتاب',
+    'edit_book' => 'تعديل الكتاب',
+    'file_book' => 'ملف الكتاب',
+    'show_book' => 'عرض الكتاب',
+    
     // حصص اونلاين
     'onlineclasses' => 'حصص اونلاين',
     'onlineclasses_list' => 'قائمة الحصص اونلاين',
@@ -328,6 +341,16 @@ return [
 
     //الاعدادات
     'settings' => 'الاعدادات',
+    'update_setting_data' => 'تم تعديل البيانات بنجاح',
+    'school_name' => 'اسم المدرسة',
+    'current_year' => 'العام الحالي',
+    'school_name_summary' => 'اسم المدرسة المختصر',
+    'phone' => 'الهاتف',
+    'school_address' => 'عنوان المدرسة',
+    'end_first_term' => 'نهاية الترم الاول ',
+    'end_second_term' => 'نهاية الترم الثاني',
+    'school_logo' => 'شعار المدرسة',
+
 
     // المستخدمين
     'users' => 'المستخدمين',

@@ -11,6 +11,7 @@ use App\Interfaces\Fees\FeeInterface;
 use App\Interfaces\Fees\FeeInvoiceInterface;
 use App\Interfaces\Fees\ProcessingFeeInterface;
 use App\Interfaces\Grades\GradeInterface;
+use App\Interfaces\Library\LibraryInterface;
 use App\Interfaces\OnlineClasses\OnlineClasseInterface;
 use App\Interfaces\Sections\SectionInterface;
 use App\Interfaces\Students\ReceiptStudentInterface;
@@ -28,6 +29,7 @@ use App\Repositories\Fees\FeeInvoiceRepository;
 use App\Repositories\Fees\FeeRepository;
 use App\Repositories\Fees\ProcessingFeeRepository;
 use App\Repositories\Grades\GradeRepository;
+use App\Repositories\Library\LibraryRepository;
 use App\Repositories\OnlineClasses\OnlineClasseRepository;
 use App\Repositories\Sections\SectionRepository;
 use App\Repositories\StudentPromotions\StudentPromotionRepository;
@@ -62,6 +64,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(QuizzeInterface::class, QuizzeRepository::class);
         $this->app->bind(QuestionInterface::class, QuestionRepository::class);
         $this->app->bind(OnlineClasseInterface::class, OnlineClasseRepository::class);
+        $this->app->bind(LibraryInterface::class, LibraryRepository::class);
     }
 
     /**

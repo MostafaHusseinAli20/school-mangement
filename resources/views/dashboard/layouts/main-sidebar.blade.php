@@ -15,7 +15,7 @@
                         </a>
                     </li>
                     <!-- menu title -->
-                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">Components </li>
+                    <li class="mt-10 mb-10 text-muted pl-4 font-medium menu-title">{{ trans('trans.features') }} </li>
 
                     <!-- Grades -->
                     <li>
@@ -212,9 +212,7 @@
                             <div class="clearfix"></div>
                         </a>
                         <ul id="library-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                            <li> <a href="themify-icons.html">Themify icons</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
+                            <li> <a href="{{ route('library.index') }}">{{ trans('trans.library_list') }}</a> </li>
                         </ul>
                     </li>
 
@@ -233,22 +231,6 @@
                         </ul>
                     </li>
 
-                    <!-- Settings-->
-                    <li>
-                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#Settings-icon">
-                            <div class="pull-left"><i class="fas fa-cogs"></i><span
-                                    class="right-nav-text">{{ trans('trans.settings') }}</span></div>
-                            <div class="pull-right"><i class="ti-plus"></i></div>
-                            <div class="clearfix"></div>
-                        </a>
-                        <ul id="Settings-icon" class="collapse" data-parent="#sidebarnav">
-                            <li> <a href="fontawesome-icon.html">font Awesome</a> </li>
-                            <li> <a href="themify-icons.html">Themify icons</a> </li>
-                            <li> <a href="weather-icon.html">Weather icons</a> </li>
-                        </ul>
-                    </li>
-
-
                     <!-- Users-->
                     <li>
                         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Users-icon">
@@ -264,6 +246,10 @@
                         </ul>
                     </li>
 
+                    <!-- Settings-->
+                    <li>
+                        <a href="{{ route('settings.index') }}"><i class="fas fa-cogs"></i><span class="right-nav-text">{{trans('trans.settings')}} </span></a>
+                    </li>
 
                 </ul>
             </div>
@@ -272,3 +258,5 @@
         <!-- Left Sidebar End-->
 
         <!--=================================
+
+            
