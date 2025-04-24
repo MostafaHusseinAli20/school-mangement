@@ -38,6 +38,7 @@ use App\Repositories\Students\StudentGraduate\StudentGraduateRepository;
 use App\Repositories\Students\StudentRepository;
 use App\Repositories\Subjects\SubjectRepository;
 use App\Repositories\Teachers\TeacherRepository;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

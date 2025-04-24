@@ -2,6 +2,6 @@
 
 return [
     App\Providers\AppServiceProvider::class,
-    App\Providers\CrudRepoServiceProvider::class,
     App\Providers\RepositoriesServiceProvider::class,
+    App\Providers\RouteServiceProvider::class,
 ];

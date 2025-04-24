@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Exams\ExamController;
@@ -23,11 +24,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
+->name('selection');
 
-Route::redirect('/', '/login');
+// Route::redirect('/', '/login');
+
+Route::get('login/{type}', [LoginController::class, 'loginForm'])
+->middleware('guest')->name('login.show');
+
+Route::post('login', [LoginController::class, 'login'])->name('login');
+
+Route::post('/logout/{type}', [LoginController::class, 'logout'])
+    ->middleware(['auth:web,student,teacher,parent'])
+    ->name('logout');
 
 Auth::routes();
 
@@ -41,8 +50,10 @@ Route::group([
         'auth'
     ]
 ], function () {
+
     // Main Dashboard Route
-    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'indexAfterLogin'])
+    ->name('dashboard');
 
     // Grades Route
     Route::resource('grades', GradeController::class);
