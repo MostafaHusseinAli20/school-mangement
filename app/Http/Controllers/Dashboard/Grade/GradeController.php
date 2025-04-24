@@ -4,15 +4,15 @@ namespace App\Http\Controllers\Dashboard\Grade;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Grades\GradeRequest;
-use App\Repositories\Grades\GradeRepository;
+use App\Interfaces\Grades\GradeInterface;
 use Illuminate\Http\Request;
 
 class GradeController extends Controller
 {
-    private $gradeRepo;
-    public function __construct(GradeRepository $gradeRepo)
+    private $gradeInterface;
+    public function __construct(GradeInterface $gradeInterface)
     {
-        $this->gradeRepo = $gradeRepo;
+        $this->gradeInterface = $gradeInterface;
     }
 
     /**
@@ -20,7 +20,7 @@ class GradeController extends Controller
      */
     public function index()
     {
-       return $this->gradeRepo->index();
+       return $this->gradeInterface->index();
     }
 
     /**
@@ -28,7 +28,7 @@ class GradeController extends Controller
      */
     public function store(GradeRequest $request)
     {
-        return $this->gradeRepo->store($request);
+        return $this->gradeInterface->store($request);
     }
 
     /**
@@ -36,7 +36,7 @@ class GradeController extends Controller
      */
     public function update(GradeRequest $request, string $id)
     {
-        return $this->gradeRepo->update($request, $id);
+        return $this->gradeInterface->update($request, $id);
     }
 
     /**
@@ -44,6 +44,6 @@ class GradeController extends Controller
      */
     public function destroy(Request $request)
     {
-        return $this->gradeRepo->destroy($request);
+        return $this->gradeInterface->destroy($request);
     }
 }

@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 
-@section('title', __('trans.school_mangement_system') . ' | ' . __('trans.sections'))
+@section('title', __('trans.school_mangement_system') . ' | ' . __('trans.sections_list'))
 
 @section('css')
     @toastr_css

@@ -4,21 +4,21 @@ namespace App\Http\Controllers\Dashboard\Sections;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Sections\SectionRequest;
-use App\Repositories\Sections\SectionRepository;
+use App\Interfaces\Sections\SectionInterface;
 
 class SectionsController extends Controller
 {
-    private $sectionRepository;
-    public function __construct(SectionRepository $sectionRepository)
+    private $sectionInterface;
+    public function __construct(SectionInterface $sectionInterface)
     {
-        $this->sectionRepository = $sectionRepository;
+        $this->sectionInterface = $sectionInterface;
     }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       return $this->sectionRepository->index();
+       return $this->sectionInterface->index();
     }
 
     /**
@@ -26,7 +26,7 @@ class SectionsController extends Controller
      */
     public function store(SectionRequest $request)
     {
-       return $this->sectionRepository->store($request);
+       return $this->sectionInterface->store($request);
     }
 
     /**
@@ -34,7 +34,7 @@ class SectionsController extends Controller
      */
     public function update(SectionRequest $request, string $id)
     {
-        return $this->sectionRepository->update($request, $id);
+        return $this->sectionInterface->update($request, $id);
     }
 
     /**
@@ -42,11 +42,11 @@ class SectionsController extends Controller
      */
     public function destroy(string $id)
     {
-        return $this->sectionRepository->destroy($id);
+        return $this->sectionInterface->destroy($id);
     }
 
     public function getclasses($id)
     {
-        return $this->sectionRepository->getclasses($id);
+        return $this->sectionInterface->getclasses($id);
     }
 }

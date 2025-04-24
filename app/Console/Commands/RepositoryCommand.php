@@ -11,7 +11,7 @@ class RepositoryCommand extends FileFactoryCommand
      *
      * @var string
      */
-    protected $signature = 'make:repository {classname}';
+    protected $signature = 'make:repo {classname}';
 
     /**
      * The console command description.

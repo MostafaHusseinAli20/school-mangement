@@ -57,7 +57,17 @@
                     </div>
                     <div class="col-lg-4 col-md-6 bg-white">
                         <div class="login-fancy pb-40 clearfix">
-                            <h3 class="mb-30">تسجيل الدخول</h3>
+                            <h3 style="font-family: 'Cairo', sans-serif" class="mb-30">تسجيل الدخول 
+                                @if ($type == 'student')
+                                    طالب
+                                @elseif ($type == 'teacher')
+                                    معلم
+                                @elseif ($type == 'parent')
+                                    ولي امر
+                                @elseif ($type == 'admin')
+                                    ادمن
+                                @endif
+                            </h3>
 
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
@@ -67,6 +77,8 @@
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
                                         value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                    <input type="hidden" name="type" value="{{ $type }}">
+
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -80,7 +92,8 @@
                                     <input id="password" type="password"
                                         class="form-control @error('password') is-invalid @enderror" name="password"
                                         required autocomplete="current-password">
-
+                                    <input type="hidden" name="type" value="{{ $type }}">
+                                    
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -98,7 +111,7 @@
 
                                 <div class="d-flex text-center justify-content-center">
                                     <h6 class="text-secondary"> اذا ليس لديك حساب اذهب الي <i class="fa fa-arrow-left"> </i> </h6>
-                                    <a class="ml-1 pt-1 text-primary" href="{{ route('register') }}">Register</a>
+                                    <a class="ml-1 pt-1" style="color: #84ba3f" href="{{ route('register') }}">Register</a>
                                 </div>
 
                                 <button class="button"><span>دخول</span><i class="fa fa-check"></i></button>

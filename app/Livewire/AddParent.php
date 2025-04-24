@@ -139,7 +139,7 @@ class AddParent extends Component
             if (!empty($this->photos)) {
                 foreach ($this->photos as $photo) {
 
-                    $photo->storeAs($this->national_ID_father, $photo->getClientOriginalName(), 'public');
+                    $photo->storeAs("parents_attachments/$this->national_ID_father", $photo->getClientOriginalName(), 'public');
 
                     ParentAttachment::create([
                         'file_name' => $photo->getClientOriginalName(),
