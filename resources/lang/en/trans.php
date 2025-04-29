@@ -4,6 +4,14 @@ return [
     'school_mangement_system' => 'School Mangement System',
     'main' => 'Main Page',
     'features' => 'Features',
+    'admin_dashboard' => 'Admin Dashboard',
+    'student_counts' => 'Student Counts',
+    'teachers_counts' => 'Teachers Counts',
+    'show_data' => 'Show Data',
+    'parents_count' => 'Parents Count',
+    'classes_count' => 'Classes Count',
+    'latest_operations' => 'Latest Operations',
+    'invoices' => 'Invoices',
 
     // Grades
     'acadmic_year' => 'Acadmic Year',
@@ -379,6 +387,10 @@ return [
     'back_parent_list' => 'Back to Parent List',
     'start_url' => 'Start Url',
     'join_url' => 'Join Url for Students',
+    'name_parent' => 'Name Parent',
+    'National_id' => 'National ID',
+    'phone_number' => 'Phone Number',
+    'invoice_number' => 'Invoice Number',
 
     // Mother Information
     'Name_Mother' => 'Name Mother AR',
@@ -394,4 +406,9 @@ return [
     'Religion_Mother_id' => 'Religion Mother',
     'success' => 'Parent Adedd Successfuly',
     'attachments' => 'Attachments',
+
+    // Events
+    'events' => 'Events',
+    'add_event' => 'Add Event',
+    'event_topic' => 'Event Topic',
 ];

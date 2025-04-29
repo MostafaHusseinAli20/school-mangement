@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
+use App\Http\Controllers\Dashboard\Events\EventController;
 use App\Http\Controllers\Dashboard\Exams\ExamController;
 use App\Http\Controllers\Dashboard\Exams\QuestionController;
 use App\Http\Controllers\Dashboard\Exams\QuizzeController;
@@ -125,8 +126,13 @@ Route::group([
     // Settings Routes
     Route::get('settings', [SettingController::class, 'index'])->name('settings.index');
     Route::put('settings/{id}/update', [SettingController::class, 'update'])->name('settings.update');
+    
+    // Event Route
+    Route::get('/calendar', [EventController::class, 'index'])->name('calendar.index');
+    Route::post('/add-event', [EventController::class, 'store'])->name('add.event');
+    Route::post('/update-event', [EventController::class, 'update'])->name('update.event');
 });
 
 // Livewire Routes
-Route::view("/ar/add_parent", 'livewire.main')->middleware('auth');
+Route::view("/ar/add_parent", 'livewire.main')->middleware('auth')->name('add_parent');
 Route::view("/en/add_parent", 'livewire.main')->middleware('auth');

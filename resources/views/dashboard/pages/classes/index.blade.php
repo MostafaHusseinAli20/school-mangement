@@ -36,7 +36,7 @@
 
                     <form action="{{ route('filter_classe') }}" method="POST">
                         @csrf
-                        <select style="width: 20%; margin-bottom: 10px" class="form-control selectpicker" data-style="btn-info" name="grade_id" required
+                        <select style="width: 20%; margin-bottom: 10px" class="form-control selectpicker p-2" data-style="btn-info" name="grade_id" required
                                 onchange="this.form.submit()">
                             <option value="" selected disabled>@lang('trans.search_by_grade')</option>
                             @foreach ($grades as $grade)

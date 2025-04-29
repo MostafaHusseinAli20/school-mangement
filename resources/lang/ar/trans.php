@@ -4,6 +4,14 @@ return [
     'school_mangement_system' =>  'نظام ادارة المدراس',
     'main' => 'الرئيسية',
     'features' => 'خصائص',
+    'admin_dashboard' => 'لوحة تحكم الادمن',
+    'student_counts' => 'عدد الطلاب',
+    'teachers_counts' => 'عدد المعلمين',
+    'show_data' => 'عرض البيانات',
+    'parents_count' => 'عدد الاولياء',
+    'classes_count' => 'عدد الصفوف الدراسية',
+    'latest_operations' => 'اخر العمليات علي النظام',
+    'invoices' => 'الفواتير',
 
     // المراحل الدراسية
     'acadmic_year' => 'المراحل الدراسية',
@@ -385,6 +393,10 @@ return [
     'save_data' => 'هل انت متأكد من حفظ البيانات',
     'delete_data' => 'هل انت متأكد من عملية الحذف ؟',
     'back_parent_list' => 'العودة للقائمة',
+    'name_parent' => 'اسم ولي الامر',
+    'National_id' => 'رقم الهوية',
+    'phone_number' => 'رقم الهاتف',
+    'invoice_number' => 'رقم الفاتورة',
 
     // Mother Information
     'Name_Mother' => 'اسم الام باللغة العربية',
@@ -400,4 +412,11 @@ return [
     'Religion_Mother_id' => 'الديانة الام',
     'attachments' => 'المرفقات',
     'success' => 'تم اضافة ولي الامر بنجاح',
+
+    // الاحداث
+    'events' => 'الاحداث',
+    'add_event' => 'اضافة حدث',
+    'event_name' => 'اسم الحدث',
+    'event_start_date' => 'تاريخ بداية الحدث',
+    'event_topic' => 'موضوع الحدث',
 ];
