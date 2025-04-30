@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.master')
 
-@section('title', __('trans.school_mangement_system') . " | " . __('trans.main')) 
+@section('title', __('trans.school_mangement_system') . ' | ' . __('trans.students') . ' | ' . __('trans.main'))
     
 @section('content')
 <div class="page-title">

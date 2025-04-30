@@ -12,7 +12,8 @@ return [
     'classes_count' => 'Classes Count',
     'latest_operations' => 'Latest Operations',
     'invoices' => 'Invoices',
-
+    'profile' => 'Profile',
+    
     // Grades
     'acadmic_year' => 'Acadmic Year',
     'grade_list' => 'Grade List',

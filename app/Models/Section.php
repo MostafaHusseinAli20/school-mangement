@@ -23,6 +23,11 @@ class Section extends Model
         return $this->belongsToMany(Teacher::class, 'teachers_sections','section_id','teacher_id');
     }
 
+    public function grades()
+    {
+        return $this->belongsTo(Grade::class, 'grade_id', 'id');
+    }
+
     protected $casts = [
         'name_section' => 'array',
     ];
