@@ -2,6 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classe;
+use App\Models\Event;
+use App\Models\MyParent;
+use App\Models\Student;
+use App\Models\Subject;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -28,6 +34,12 @@ class HomeController extends Controller
 
     public function indexAfterLogin()
     {
-        return view('dashboard.index');
+        $events = Event::select('id', 'title', 'start')->get();
+        
+        $data['students'] = Student::count();
+        $data['parents'] = MyParent::count();
+        $data['teachers'] = Teacher::count();
+        $data['classes'] = Classe::count();
+        return view('dashboard.index', $data, compact('events'));
     }
 }

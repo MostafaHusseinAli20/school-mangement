@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('dashboard.layouts.head')
+
+<head>
+    @include('dashboard.layouts.head')
+    @livewireStyles
+</head>
 
 <body>
     <div class="wrapper">
@@ -18,12 +22,13 @@
             @section('content')
             @show
             
-            {{-- @include('dashboard.layouts.footer') --}}
-            
+            @include('dashboard.layouts.footer')
+          
         </div>
     </div>
     @include('dashboard.layouts.scripts')
-    
+    @livewireScripts
+    @stack('scripts')
 </body>
 
 </html>

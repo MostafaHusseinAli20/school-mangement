@@ -48,8 +48,10 @@ NOTE:
         $(this).remove();
       }
     },
-    dayClick:  function(event, jsEvent, view) {
+    dayClick:  function(date, jsEvent, view) {
+        // $('#calendarModal').modal('show');
         $('#calendarModal').modal('show');
+        $('#eventDate').val(date.format()); // ✅ الآن date معروف ومستخدم بشكل صحيح
     },
     events: [
       {
