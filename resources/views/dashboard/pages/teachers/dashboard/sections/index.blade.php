@@ -26,7 +26,7 @@
                         <tbody>
                         @foreach ($sections as $index => $section)
                             <tr>
-                                <td>{{ $index }}</td>
+                                <td>{{ $index + 1 }}</td>
                                 <td>{{ $section->grades->name }}</td>
                                 <td>{{ $section->name_section }}</td>
                             </tr>

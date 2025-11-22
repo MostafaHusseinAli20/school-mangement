@@ -20,6 +20,8 @@ return Application::configure(basePath: dirname(__DIR__))
             'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
             'guest.middleware'        => \App\Http\Middleware\RedirectIfAuthenticated::class,
             'auth.middleware'         => \App\Http\Middleware\Authenticate::class,
+            'preventRetakeExam'       => \App\Http\Middleware\PreventRetakeExam::class,
+            'forbidenIfDosntExam'     => \App\Http\Middleware\RedirectPageForbidenIfDosntExam::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

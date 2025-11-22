@@ -14,7 +14,8 @@ class AttendanceRepository implements AttendanceInterface
     {
         $grades = Grade::with(['sections'])->get();
         $list_grades = Grade::get();
-        return view('dashboard.pages.attendances.sections', compact('grades', 'list_grades'));
+        return view('dashboard.pages.attendances.sections',
+            compact('grades', 'list_grades'));
     }
 
     public function store($request)
@@ -29,7 +30,10 @@ class AttendanceRepository implements AttendanceInterface
                     $attendance_status = false;
                 }
             
-            Attendance::create([
+            Attendance::updateOrCreate([
+                'student_id' => $studentId
+                ],
+        [
                 'attendance_date' => date('Y-m-d'),
                 'attendance_status' => $attendance_status,
                 'student_id' => $studentId,

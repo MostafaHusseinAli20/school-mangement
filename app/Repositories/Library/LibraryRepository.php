@@ -17,20 +17,20 @@ class LibraryRepository implements LibraryInterface
         $books = Library::get();
         return view('dashboard.pages.library.index', compact('books'));
     }
-    
+
     public function create()
     {
         $grades = Grade::get();
         $teachers = Teacher::get();
-        return view('dashboard.pages.library.create', compact('grades','teachers'));
+        return view('dashboard.pages.library.create', compact('grades', 'teachers'));
     }
-    
+
     public function store($request)
     {
         DB::beginTransaction();
         try {
             $file_name = $request->file('file_name')->getClientOriginalName();
-            $save_fileName = $request->file('file_name')->storeAs('library_attachment',$file_name, 'public');
+            $save_fileName = $request->file('file_name')->storeAs('library_attachment', $file_name, 'public');
 
             Library::create([
                 'title' => $request->title,
@@ -50,12 +50,12 @@ class LibraryRepository implements LibraryInterface
             return back();
         }
     }
-    
+
     public function show($filename)
     {
-        
+        //
     }
-    
+
     public function edit($id)
     {
         $book = Library::findOrFail($id);
@@ -65,17 +65,17 @@ class LibraryRepository implements LibraryInterface
         return view('dashboard.pages.library.edit', compact(
             'book',
             'grades',
-                       'teachers',
-                       'classrooms'
+            'teachers',
+            'classrooms'
         ));
     }
-    
+
     public function update($request, $id)
     {
         DB::beginTransaction();
         try {
             $library = Library::findOrFail($id);
-    
+
             // التحقق إذا تم رفع صورة جديدة
             if ($request->hasFile('file_name')) {
                 // حذف الصورة القديمة لو موجودة
@@ -100,7 +100,7 @@ class LibraryRepository implements LibraryInterface
                 'section_id' => $request->section_id,
                 'teacher_id' => $request->teacher_id,
             ]);
-    
+
             DB::commit();
             toastr()->success(__('trans.message_updated_library'));
             return redirect()->route('library.index');
@@ -110,15 +110,14 @@ class LibraryRepository implements LibraryInterface
             return back();
         }
     }
-    
+
     public function destroy($id)
     {
-        
+
         $library = Library::findOrFail($id);
         $filePath = "$library->file_name";
 
-        if(Storage::disk('public')->exists($filePath))
-        {
+        if (Storage::disk('public')->exists($filePath)) {
             Storage::disk('public')->delete($filePath);
         }
 

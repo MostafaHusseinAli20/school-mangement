@@ -3,6 +3,7 @@
 return [
     'school_mangement_system' => 'School Mangement System',
     'main' => 'Main Page',
+    "add" => 'Add',
     'features' => 'Features',
     'admin_dashboard' => 'Admin Dashboard',
     'student_counts' => 'Student Counts',
@@ -13,6 +14,10 @@ return [
     'latest_operations' => 'Latest Operations',
     'invoices' => 'Invoices',
     'profile' => 'Profile',
+    "essay" => 'Essay',
+    "multiple_choice" => 'Multiple Choice',
+    "true_false" => 'True False',
+    "all" => 'All',
     
     // Grades
     'acadmic_year' => 'Acadmic Year',
@@ -296,6 +301,7 @@ return [
     'message_updated_question' => 'Question Updated Successfuly',
     'message_deleted_question' => 'Question Deleted Successfuly',
     'delete_question' => 'Delete Question',
+    "title_question" => "Question",
 
     //library
     'library' => 'Library',
@@ -412,4 +418,36 @@ return [
     'events' => 'Events',
     'add_event' => 'Add Event',
     'event_topic' => 'Event Topic',
+    'list_question' => 'List Question',
+
+    // Questions
+    "title_required" => "The title is required",
+    "answers_required" => "The answers are required",
+    "right_answer_required" => "The right answer is required",
+    "score_required" => "The score is required",
+    
+    // Sessions
+    "indirect" => "Indirect",
+    "direct" => "Direct",
+    "lessons" => "Lessons",
+    "count_questions" => "Questions Count",
+    "student" => "Student",
+    "count_student_exam" => "Students who took the exam",
+    //
+    "update_data" => "Update Data",
+    "show_password" => "Show Password",
+    "teacher_name_en" => "Teacher Name EN",
+    "teacher_name_ar" => "Teacher Name AR",
+
+    //
+    "message_delete_onlineclass" => "Online Class Deleted Successfuly",
+    "warning_question" => "Questions should be separated by a dash (-)",
+
+    "message_already_answered" => "You Already Answered This Exam",
+    "message_not_allowed" => "You are not allowed to access this page until you complete the exam",
+    "students_list_exams" => "Students List Exams",
+    "show_students_exam" => "Show Students Exam",
+    "message_cancelled_exam" => "Exam Cancelled For Student Successfuly",
+    "cancelled_quizze_student" => "Cancel Exam For Student",
+    "warning_cancel_exam" => "Are You Sure Cancel Exam For Student?",
 ];

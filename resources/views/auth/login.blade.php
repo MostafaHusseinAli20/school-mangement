@@ -69,6 +69,16 @@
                                 @endif
                             </h3>
 
+                            @if (\Session::has('message'))
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        <li>
+                                            {!! \Session::get('message') !!}
+                                        </li>
+                                    </ul>
+                                </div> 
+                            @endif
+
                             <form method="POST" action="{{ route('login') }}">
                                 @csrf
 

@@ -18,6 +18,7 @@ class OnlineClasse extends Model
         'classe_id',
         'section_id',
         'user_id',
+        'teacher_id',
         'type'
     ];
     
@@ -39,5 +40,10 @@ class OnlineClasse extends Model
     public function user()
     {
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function teacher()
+    {
+        return $this->belongsTo(User::class,'teacher_id');
     }
 }

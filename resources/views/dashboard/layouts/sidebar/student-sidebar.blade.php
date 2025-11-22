@@ -2,7 +2,7 @@
     <ul class="nav navbar-nav side-menu" id="sidebarnav">
         <!-- menu item Dashboard-->
         <li>
-            <a href="{{ url('/dashboard') }}">
+            <a href="{{ route('student.dashboard') }}">
                 <div class="pull-left"><i class="ti-home"></i><span
                         class="right-nav-text">{{trans('trans.main')}}</span>
                 </div>
@@ -15,14 +15,14 @@
 
         <!-- الامتحانات-->
         <li>
-            <a href="{{route('settings.index')}}"><i class="fas fa-book-open"></i><span
-                    class="right-nav-text">الامتحانات</span></a>
+            <a href="{{route('students.exam.index')}}"><i class="fas fa-book-open"></i><span
+                    class="right-nav-text">{{trans('trans.exams') }}</span></a>
         </li>
 
         <!-- Settings-->
         <li>
-            <a href="{{route('settings.index')}}"><i class="fas fa-id-card-alt"></i><span
-                    class="right-nav-text">الملف الشخصي</span></a>
+            <a href="{{route('student.profile.index')}}"><i class="fas fa-id-card-alt"></i><span
+                    class="right-nav-text">{{trans('trans.profile') }}</span></a>
         </li>
 
     </ul>

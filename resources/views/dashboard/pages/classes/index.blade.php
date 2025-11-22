@@ -23,7 +23,8 @@
                         </div>
                     @endif
 
-                    <button type="button" class="button x-small" data-toggle="modal" data-target="#exampleModal">
+                    <button type="button" class="button x-small" data-toggle="modal" 
+                        data-target="#exampleModal">
                         @lang('trans.add_class')
                     </button>
 

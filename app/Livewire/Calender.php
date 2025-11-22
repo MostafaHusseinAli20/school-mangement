@@ -7,66 +7,50 @@ use Livewire\Component;
 
 class Calender extends Component
 {
-    public string $events = '';
-    public bool $showModal = false;
-    public string $newEventTitle = '';
-    public string $newEventStart = '';
+    public $events = '';
 
-    public function openModal($date)
+    public function getevent()
     {
-        $this->newEventStart = $date;
-        $this->showModal = true;
+        $events = Event::select('id','title','start')->get();
+
+        return  json_encode($events);
     }
 
-    public function saveEvent()
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function addevent($event)
     {
-        $this->validate([
-            'newEventTitle' => 'required|string|max:255',
-            'newEventStart' => 'required|date',
-        ]);
-
-        Event::create([
-            'title' => $this->newEventTitle,
-            'start' => $this->newEventStart,
-        ]);
-
-        $this->reset(['newEventTitle', 'newEventStart', 'showModal']);
-        $this->loadEvents();
+        $input['title'] = $event['title'];
+        $input['start'] = $event['start'];
+        Event::create($input);
     }
 
-    public function mount()
-    {
-        $this->loadEvents();
-    }
-
-    public function loadEvents()
-    {
-        $this->events = json_encode(Event::select('id', 'title', 'start')->get());
-    }
-
-    public function addevent(array $event): void
-    {
-        Event::create([
-            'title' => $event['title'],
-            'start' => $event['start'],
-        ]);
-
-        $this->loadEvents(); // لتحديث الأحداث بعد الإضافة
-    }
-
-    public function eventDrop(array $event): void
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
+    public function eventDrop($event, $oldEvent)
     {
         $eventdata = Event::find($event['id']);
-        if ($eventdata) {
-            $eventdata->start = $event['start'];
-            $eventdata->save();
-        }
-
-        $this->loadEvents(); // لتحديث الأحداث بعد النقل
+        $eventdata->start = $event['start'];
+        $eventdata->save();
     }
+
+    /**
+     * Write code on Method
+     *
+     * @return response()
+     */
 
     public function render()
     {
+        $events = Event::select('id','title','start')->get();
+        $this->events = json_encode($events);
+
         return view('livewire.calender');
     }
 }

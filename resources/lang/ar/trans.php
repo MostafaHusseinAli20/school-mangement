@@ -3,6 +3,7 @@
 return [
     'school_mangement_system' =>  'نظام ادارة المدراس',
     'main' => 'الرئيسية',
+    "add" => 'اضافة',
     'features' => 'خصائص',
     'admin_dashboard' => 'لوحة تحكم الادمن',
     'student_counts' => 'عدد الطلاب',
@@ -13,6 +14,10 @@ return [
     'latest_operations' => 'اخر العمليات علي النظام',
     'invoices' => 'الفواتير',
     'profile' => 'الملف الشخصي',
+    "essay" => 'مقالي',
+    "multiple_choice" => 'اختيار من متعدد',
+    "true_false" => 'صح و خطا',
+    "all" => 'الكل',
     
     // المراحل الدراسية
     'acadmic_year' => 'المراحل الدراسية',
@@ -262,6 +267,8 @@ return [
     'message_updated_exam' => 'تم تعديل الامتحان بنجاح',
     'message_deleted_exam' => 'تم حذف الامتحان بنجاح',
     'edit_exam' => 'تعديل الامتحان',
+    "title_question" => "السؤال",
+    "right_answer" => "الاجابة الصحيحة",
     
     // الاختبارات
     'quizzes' => 'الاختبارات',
@@ -420,4 +427,35 @@ return [
     'event_name' => 'اسم الحدث',
     'event_start_date' => 'تاريخ بداية الحدث',
     'event_topic' => 'موضوع الحدث',
+    'list_question' => 'قائمة الاسئلة',
+
+    // رسائل
+    "title_required" => "العنوان مطلوب",
+    "answers_required" => "الاجابات مطلوبة",
+    "right_answer_required" => "الاجابة الصحيحة مطلوبة",
+    "score_required" => "النقاط مطلوبة",
+    
+    // Sessions
+    "indirect" => "غير مباشر",
+    "direct" => "مباشر",
+    "lessons" => "الحصص",
+    "count_questions" => "عدد الاسئلة",
+    //
+    "update_data" => "تعديل البيانات",
+    "show_password" => "اظهار كلمة المرور",
+    "teacher_name_en" => "اسم المعلم باللغة الانجليزية",
+    "teacher_name_ar" => "اسم المعلم باللغة العربية",
+    //
+    "message_delete_onlineclass" => "تم حذف الحصة بنجاح",
+    "warning_question" => "يجب فصل بعلامه - بين الاجابات",
+
+    "message_already_answered" => "لقد قمت بالجواب على هذا الامتحان من قبل",
+    "message_not_allowed" => "لا يُسمح لك بالوصول إلى هذه الصفحة حتى تكمل الاختبار",
+    "student" => "طالب",
+    "count_student_exam" => "الطلاب الذين قاموا بالامتحان",
+    "students_list_exams" => "قائمة الطلاب الذين قاموا بالامتحان",
+    "show_students_exam" => "عرض الطلاب الذين قاموا بالامتحان",
+    "message_cancelled_exam" => "تم الغاء الامتحان للطالب بنجاح",
+    "cancelled_quizze_student" => "الغاء الامتحان للطالب",
+    "warning_cancel_exam" => "هل تريد الغاء الامتحان للطالب؟",
 ];
