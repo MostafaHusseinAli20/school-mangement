@@ -30,14 +30,18 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
 
 // Route::redirect('/', '/login');
 
-Route::get('login/{type}', [LoginController::class, 'loginForm'])
-->middleware('guest')->name('login.show');
 
-Route::post('login', [LoginController::class, 'login'])->name('login');
+// Route::middleware(['auth:web,student,teacher,parent', 'guest'])
+    // ->group(function () {
+    Route::get('login/{type}', [LoginController::class, 'loginForm'])
+    ->name('login.show');
+    
+    Route::post('login', [LoginController::class, 'login'])->name('login');
+    
+    Route::post('/logout/{type}', [LoginController::class, 'logout'])
+        ->name('logout');
+// });
 
-Route::post('/logout/{type}', [LoginController::class, 'logout'])
-    ->middleware(['auth:web,student,teacher,parent'])
-    ->name('logout');
 
 Auth::routes();
 
@@ -48,7 +52,7 @@ Route::group([
         'localeSessionRedirect',
         'localizationRedirect',
         'localeViewPath',
-        'auth'
+        'auth',
     ]
 ], function () {
 

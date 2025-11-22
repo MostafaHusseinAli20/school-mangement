@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\Translatable\HasTranslations;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\DB;
 
 class Student extends Authenticatable
 {
@@ -52,6 +53,14 @@ class Student extends Authenticatable
     public function attendance()
     {
         return $this->hasMany(Attendance::class, 'student_id');
+    }
+
+    public function getTypeBloodAttribute()
+    {
+        $type_blood_id = DB::table('type_bloods')
+            ->where('id', $this->type_blood_id)
+            ->first();
+        return $type_blood_id->name;
     }
     
     // Realtion Between Student with Image (Polymorphic)

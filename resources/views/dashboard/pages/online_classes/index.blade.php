@@ -31,7 +31,7 @@
                                                 <th>{{ trans('trans.onlineclass_date') }}</th>
                                                 <th>{{ trans('trans.onlineclass_time') }}</th>
                                                 <th>{{ trans('trans.onlineclass_link') }}</th>
-                                                {{-- <th>{{ trans('trans.onlineclass_type') }}</th>   --}}
+                                                <th>{{ trans('trans.onlineclass_type') }}</th>
                                                 <th>{{ trans('trans.processes') }}</th>
                                             </tr>
                                         </thead>
@@ -42,10 +42,21 @@
                                                     <td>{{ $online_classe->grade->name }}</td>
                                                     <td>{{ $online_classe->classe->classe_name }}</td>
                                                     <td>{{ $online_classe->section->name_section }}</td>
-                                                    <td>{{ $online_classe->user->name }}</td>
+                                                    <td>{{ $online_classe->user->name ?? ''}}</td>
                                                     <td>{{ $online_classe->meeting_topic }}</td>
                                                     <td>{{ $online_classe->meeting_start_at }}</td>
                                                     <td>{{ $online_classe->meeting_duration }}</td>
+                                                    <td>
+                                                        @if ($online_classe->type == 'indirect')
+                                                            <span class="badge badge-danger">
+                                                                {{ trans('trans.indirect') }}
+                                                            </span>
+                                                        @else
+                                                            <span class="badge badge-success">
+                                                                {{ trans('trans.direct') }}
+                                                            </span>
+                                                        @endif
+                                                    </td>
                                                     <td class="text-danger"><a href="{{ $online_classe->join_url }}"
                                                             target="_blank"> {{ trans('trans.join_now') }} </a></td>
                                                     {{-- <td>{{ $online_classe->type }}</td> --}}

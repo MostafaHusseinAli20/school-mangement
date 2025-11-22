@@ -24,7 +24,7 @@ class FeeInvoiceRepository implements FeeInvoiceInterface
         DB::beginTransaction();
 
         try {
-            foreach ($List_Fees as $List_Fee) {
+            foreach ($List_Fees as $List_Fee) { 
                 // Save Data in Fee Invoices Table
                 FeeInvocie::create([
                     'invoice_date' => date('Y-m-d'),

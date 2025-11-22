@@ -101,6 +101,27 @@
 
                                 <div class="form-row">
                                     <div class="col">
+                                        <label for="title">{{ trans('trans.grade') }}</label>
+                                        <div class='input-group date'>
+                                            <select name="grade_id[]" class="custom-select my-1 mr-sm-2" multiple>
+                                                <option disabled>{{ trans('trans.Choose') }}...</option>
+                                                @foreach ($grades as $grade)
+                                                    <option value="{{ $grade->id }}"
+                                                        {{ in_array($grade->id, $teacherGrades) ? 'selected' : '' }}>
+                                                        {{ $grade->name }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        @error('grade_id')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <br>
+
+                                <div class="form-row">
+                                    <div class="col">
                                         <label for="title">{{ trans('trans.joining_date') }}</label>
                                         <div class='input-group date'>
                                             <input class="form-control" type="text" id="datepicker-action"

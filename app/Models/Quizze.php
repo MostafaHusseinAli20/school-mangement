@@ -38,4 +38,20 @@ class Quizze extends Model
     {
         return $this->belongsTo(Teacher::class, 'teacher_id');
     }
+
+    public function questions()
+    {
+        return $this->hasMany(Question::class, 'quizze_id');
+    }
+
+    public function results()
+    {
+        return $this->hasMany(Result::class, 'quiz_id');
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class, 'results', 'quiz_id', 'student_id')
+            ->distinct();
+    }
 }

@@ -1,5 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+
+@php
+    use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+@endphp
+
+<html lang="{{ LaravelLocalization::getCurrentLocale() }}" 
+    dir="{{ LaravelLocalization::getCurrentLocaleDirection() }}">
 
 <head>
     @include('dashboard.layouts.head')
@@ -21,9 +27,9 @@
         <div class="content-wrapper">
             @section('content')
             @show
-            
+
             @include('dashboard.layouts.footer')
-          
+
         </div>
     </div>
     @include('dashboard.layouts.scripts')

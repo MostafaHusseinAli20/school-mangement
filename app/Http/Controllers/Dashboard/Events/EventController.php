@@ -3,39 +3,30 @@
 namespace App\Http\Controllers\Dashboard\Events;
 
 use App\Http\Controllers\Controller;
-use App\Models\Event;
+use App\Interfaces\Events\EventInterface;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
+    private $eventInterface;
+    
+    public function __construct(EventInterface $eventInterface)
+    {
+        $this->eventInterface = $eventInterface;
+    }
+
     public function index()
     {
-        $events = Event::all();
-
-        return view('dashboard.index', compact('events'));
+        return $this->eventInterface->index();
     }
 
     public function store(Request $request)
     {
-        $event = Event::create([
-            'title' => $request->title,
-            'start' => $request->start
-        ]);
-    
-        return response()->json(['status' => 'success', 'id' => $event->id]);
+        return $this->eventInterface->store($request);
     }
 
     public function update(Request $request)
     {
-        $request->validate([
-            'id' => 'required|exists:events,id',
-            'start' => 'required|date',
-        ]);
-
-        $event = Event::find($request->id);
-        $event->start = $request->start;
-        $event->save();
-
-        return response()->json(['status' => 'success', 'message' => 'تم تحديث الحدث']);
+        return $this->eventInterface->update($request);
     }
 }

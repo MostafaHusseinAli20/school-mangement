@@ -10,9 +10,9 @@ class RouteServiceProvider extends ServiceProvider
     protected $namespace = 'App\Http\Controllers';
 
     public const HOME = '/dashboard';
-    public const STUDENT = '/student/dashboard';
-    public const TEACHER = '/teacher/dashboard';
-    public const PARENT = '/parent/dashboard';
+    public const STUDENT = '/students/dashboard';
+    public const TEACHER = '/teachers/dashboard';
+    public const PARENT = '/parents/dashboard';
     
     /**
      * Register services.
@@ -31,5 +31,7 @@ class RouteServiceProvider extends ServiceProvider
             ->group(base_path('routes/student.php'));
         Route::middleware('web')
             ->group(base_path('routes/teacher.php'));
+        Route::middleware('web')
+            ->group(base_path('routes/parent.php'));
     }
 }

@@ -1,48 +1,66 @@
 <div>
-    <script>
-        document.addEventListener('livewire:init', () => {
-            const events = @js($events);
-
-            // مثال على استخدام FullCalendar أو أي مكتبة مشابهة
-            let calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
-                events: events,
-                editable: true,
-                selectable: true,
-                select: function (info) {
-                    Livewire.dispatch('addevent', {
-                        title: prompt('Event Title'),
-                        start: info.startStr
-                    });
-                },
-                eventDrop: function (info) {
-                    Livewire.dispatch('eventDrop', {
-                        id: info.event.id,
-                        start: info.event.startStr
-                    });
-                }
-            });
-
-            calendar.render();
-        });
-        select: function (info) {
-        Livewire.dispatch('openModal', info.startStr);
-        }
-    </script>
-
-    <div id="calendar"></div>
-</div>
-
-@if($showModal)
-    <div class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-        <div class="bg-white rounded-xl p-6 w-96">
-            <h2 class="text-lg font-bold mb-4">إضافة حدث جديد</h2>
-
-            <input type="text" wire:model="newEventTitle" placeholder="عنوان الحدث" class="w-full border p-2 rounded mb-3" />
-
-            <div class="flex justify-end space-x-2">
-                <button wire:click="saveEvent" class="bg-blue-500 text-white px-4 py-2 rounded">حفظ</button>
-                <button wire:click="$set('showModal', false)" class="bg-gray-300 px-4 py-2 rounded">إلغاء</button>
-            </div>
+    <div>
+        <div id='calendar-container' wire:ignore>
+            <div id='calendar'></div>
         </div>
     </div>
-@endif
+    @push('scripts')
+        <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.js'></script>
+
+        <script>
+            document.addEventListener('livewire:load', function() {
+                var Calendar = FullCalendar.Calendar;
+                var Draggable = FullCalendar.Draggable;
+                var calendarEl = document.getElementById('calendar');
+                var checkbox = document.getElementById('drop-remove');
+                var data =   @this.events;
+                var calendar = new Calendar(calendarEl, {
+                    events: JSON.parse(data),
+                    dateClick(info)  {
+                        var title = prompt('ادخل عنوان الحدث ');
+                        var date = new Date(info.dateStr + 'T00:00:00');
+                        if(title != null && title != ''){
+                            calendar.addEvent({
+                                title: title,
+                                start: date,
+                                allDay: true
+                            });
+                            var eventAdd = {title: title,start: date};
+                        @this.addevent(eventAdd);
+                            alert('تم اضافة الحدث بنجاح');
+                        }else{
+                            alert('من فضلك ادخل عنوان الحدث');
+                        }
+                    },
+                    editable: true,
+                    selectable: true,
+                    displayEventTime: false,
+                    droppable: true, // this allows things to be dropped onto the calendar
+                    drop: function(info) {
+                        // is the "remove after drop" checkbox checked?
+                        if (checkbox.checked) {
+                            // if so, remove the element from the "Draggable Events" list
+                            info.draggedEl.parentNode.removeChild(info.draggedEl);
+                        }
+                    },
+                    eventDrop: info => @this.eventDrop(info.event, info.oldEvent),
+                    loading: function(isLoading) {
+                        if (!isLoading) {
+                            // Reset custom events
+                            this.getEvents().forEach(function(e){
+                                if (e.source === null) {
+                                    e.remove();
+                                }
+                            });
+                        }
+                    }
+                });
+                calendar.render();
+            @this.on(`refreshCalendar`, () => {
+                calendar.refetchEvents()
+            });
+            });
+        </script>
+        <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.3.1/main.min.css' rel='stylesheet' />
+    @endpush
+</div>

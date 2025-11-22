@@ -4,9 +4,11 @@ namespace App\Repositories\Teachers;
 
 use App\Interfaces\Teachers\TeacherInterface;
 use App\Models\Gender;
+use App\Models\Grade;
 use App\Models\Specialisation;
 use App\Models\Teacher;
 use App\Repositories\Grades\GradeRepository;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -28,7 +30,8 @@ class TeacherRepository implements TeacherInterface
     {
         $genders = Gender::get();
         $specializations = Specialisation::get();
-        return view('dashboard.pages.teachers.create', compact('genders', 'specializations'));
+        $grades = Grade::get();
+        return view('dashboard.pages.teachers.create', compact('genders', 'specializations', 'grades'));
     }
 
     /**
@@ -36,8 +39,9 @@ class TeacherRepository implements TeacherInterface
      */
     public function store($request)
     {
+        DB::beginTransaction();
         try {
-            Teacher::create([
+            $teacher = Teacher::create([
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
                 'name' => ['en' => $request->name_teacher_en, 'ar' => $request->name_teacher_ar],
@@ -46,10 +50,14 @@ class TeacherRepository implements TeacherInterface
                 'specialist_id' => $request->specialist_id,
                 'address' => $request->address,
             ]);
-            
+
+            $teacher->grades()->attach($request->grade_id);
+
+            DB::commit();
             toastr()->success(trans('trans.message_added_teacher'));
             return redirect()->route('teachers.index');
         } catch (\Exception $e) {
+            DB::rollBack();
             return redirect()->back()->with(['error' => $e->getMessage()]);
         }
     }
@@ -70,7 +78,21 @@ class TeacherRepository implements TeacherInterface
         $teachers = Teacher::findOrFail($id);
         $specialisations = Specialisation::get();
         $genders = Gender::get();
-        return view('dashboard.pages.teachers.edit', compact('teachers', 'specialisations', 'genders'));
+        $grades = Grade::get();
+
+        // نجيب المراحل المرتبطة بالمعلم من الجدول الوسيط
+        $teacherGrades = DB::table('teacher_grades')
+            ->where('teacher_id', $id)
+            ->pluck('grade_id')
+            ->toArray();
+
+        return view('dashboard.pages.teachers.edit', compact(
+            'teachers',
+            'specialisations',
+            'genders',
+            'grades',
+            'teacherGrades'
+        ));
     }
 
     /**
@@ -78,16 +100,17 @@ class TeacherRepository implements TeacherInterface
      */
     public function update($request, $id)
     {
+        DB::beginTransaction();
+
         try {
             $teacher = Teacher::findOrFail($id);
 
-            $data = 
-            [
+            $data = [
                 'email' => $request->email,
                 'name' => ['ar' => $request->name_teacher_ar, 'en' => $request->name_teacher_en],
                 'address' => $request->address,
                 'specialist_id' => $request->specialist_id,
-                'gender_id' => $request->gender_id
+                'gender_id' => $request->gender_id,
             ];
 
             if ($request->filled('password')) {
@@ -96,12 +119,20 @@ class TeacherRepository implements TeacherInterface
 
             $teacher->update($data);
 
+            if ($request->has('grade_id') && is_array($request->grade_id)) {
+                $teacher->grades()->sync($request->grade_id);
+            }
+
+            DB::commit();
+
             toastr()->success(trans('trans.message_updated_teacher'));
             return redirect()->route('teachers.index');
         } catch (\Exception $e) {
-            return redirect()->back()->with(['error' => $e->getMessage()]);
+            DB::rollBack();
+            return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
+
 
     /**
      * Remove the specified resource from storage.

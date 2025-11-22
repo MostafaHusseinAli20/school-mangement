@@ -6,10 +6,11 @@
     <div class="page-title">
         <div class="row">
             <div class="col-sm-6 mb-2">
-                <h4 class="mb-0" style="font-family: 'Cairo', sans-serif"> {{ trans('trans-teacher.welcome') }}: {{ auth()->guard('teacher')->user()->name }}</h4>
+                <h4 class="mb-0" style="font-family: 'Cairo', sans-serif"> {{ trans('trans-teacher.welcome') }}:
+                    {{ auth()->guard('teacher')->user()->name }}</h4>
                 </h4>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-6 mt-3">
                 <ol class="breadcrumb pt-0 pr-0 float-left float-sm-right">
                 </ol>
             </div>
@@ -268,4 +269,112 @@
         </div>
     </div>
     <!-- end Orders Status widgets-->
+    <livewire:calender />
+
+    <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ trans('trans.add_event') }}</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="eventTitle"
+                        placeholder="{{ trans('trans.event_topic') }}">
+                    <input type="hidden" id="eventDate">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="saveEvent">{{ trans('trans.sure') }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('js')
+    <script>
+    $(document).ready(function () {
+        // إعداد CSRF
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        // الأحداث المرسلة من السيرفر
+        var savedEvents = @json($events);
+
+        // تهيئة التقويم
+        $('#calendar').fullCalendar({
+            editable: true,
+            droppable: true,
+            selectable: true,
+            selectHelper: true,
+            events: savedEvents.map(event => ({
+                id: event.id,
+                title: event.title,
+                start: event.start,
+                allDay: true
+            })),
+            // عند الضغط على يوم
+            dayClick: function (date, jsEvent, view) {
+                $('#calendarModal').modal('show');
+                $('#eventDate').val(date.format());
+            },
+            // عند سحب حدث
+            eventDrop: function (event, delta, revertFunc) {
+                $.ajax({
+                    url: '{{ route("teacher.update.event") }}',
+                    method: 'POST',
+                    data: {
+                        id: event.id,
+                        start: event.start.format(),
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        if (response.status !== 'success') {
+                            alert('حدث خطأ أثناء التحديث');
+                            revertFunc();
+                        }
+                    },
+                    error: function () {
+                        alert('فشل الاتصال بالسيرفر');
+                        revertFunc();
+                    }
+                });
+            }
+        });
+
+        // حفظ حدث جديد
+        $('#saveEvent').on('click', function () {
+            var title = $('#eventTitle').val();
+            var date = $('#eventDate').val();
+
+            if (title && date) {
+                $.ajax({
+                    url: '{{ route("teacher.add.event") }}',
+                    method: 'POST',
+                    data: {
+                        title: title,
+                        start: date,
+                        _token: $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        if (response.status === 'success') {
+                            $('#calendar').fullCalendar('renderEvent', {
+                                id: response.id, // عشان eventDrop يشتغل لازم ID
+                                title: title,
+                                start: date,
+                                allDay: true
+                            }, true);
+
+                            $('#calendarModal').modal('hide');
+                            $('#eventTitle').val('');
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
 @endsection

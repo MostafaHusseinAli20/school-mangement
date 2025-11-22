@@ -64,15 +64,20 @@
 
                             @if (isset($student->attendance()->where('attendance_date', date('Y-m-d'))->first()->student_id))
                                 <label class="block text-gray-500 font-semibold sm:border-r sm:pr-4">
-                                    <input name="attendences[{{ $student->id }}]" disabled
-                                        {{ $student->attendance()->first()->attendance_status == 1 ? 'checked' : '' }}
+                                    <input name="attendences[{{ $student->id }}]" 
+                                     @foreach ($student->attendance()->where('attendance_date', date('Y-m-d'))->get() as $attendance)
+                                        {{ $attendance->attendance_status == 1 ? 'checked' : '' }}
+                                     @endforeach
+                                        
                                         class="leading-tight" type="radio" value="presence">
                                     <span class="text-success">{{ trans('trans.presence') }}</span>
                                 </label>
 
                                 <label class="ml-4 block text-gray-500 font-semibold">
-                                    <input name="attendences[{{ $student->id }}]" disabled
-                                        {{ $student->attendance()->first()->attendance_status == 0 ? 'checked' : '' }}
+                                    <input name="attendences[{{ $student->id }}]" 
+                                        @foreach ($student->attendance()->where('attendance_date', date('Y-m-d'))->get() as $attendance)
+                                            {{ $attendance->attendance_status == 0 ? 'checked' : '' }}
+                                        @endforeach                                        
                                         class="leading-tight" type="radio" value="absent">
                                     <span class="text-danger">{{ trans('trans.absent') }}</span>
                                 </label>

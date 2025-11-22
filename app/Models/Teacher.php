@@ -28,6 +28,11 @@ class Teacher extends Authenticatable
         return $this->belongsToMany(Section::class, 'teachers_sections','teacher_id','section_id');
     }
 
+    public function grades()
+    {
+        return $this->belongsToMany(Grade::class, 'teacher_grades');
+    }
+
     protected $casts = [
         'name' => 'array',
     ];
