@@ -227,7 +227,7 @@
     </li>
 
     <!-- Users-->
-    <li>
+    {{-- <li>
         <a href="javascript:void(0);" data-toggle="collapse" data-target="#Users-icon">
             <div class="pull-left"><i class="fas fa-users"></i><span
                     class="right-nav-text">{{ trans('trans.users') }}</span></div>
@@ -239,7 +239,7 @@
             <li> <a href="themify-icons.html">Themify icons</a> </li>
             <li> <a href="weather-icon.html">Weather icons</a> </li>
         </ul>
-    </li>
+    </li> --}}
 
     <!-- Settings-->
     <li>
