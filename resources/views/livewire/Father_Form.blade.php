@@ -1,4 +1,16 @@
 <div @if ($currentStep != 1) style="display: none" class="row setup-content" id="step-1" @endif>
+    
+    <div class="d-flex flex-column justify-content-center align-items-center mb-3">
+        <div class="placeholder-text mb-2">{{ trans('trans.choose_image') }}</div>
+        <label for="mainImage" class="image-upload-container">
+            <div class="edit-icon">✎</div>
+
+            <img id="previewImage" alt="selected image">
+
+        </label>
+
+        <input type="file" id="mainImage" name="image" wire:model="image" accept="image/*" style="display:none;">
+    </div>
 
     <div class="col-xs-12">
         <div class="col-md-12">
@@ -128,11 +140,11 @@
 
             @if ($updateMode)
                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit_edit"
-                type="button">{{ trans('trans.Next') }}
+                    type="button">{{ trans('trans.Next') }}
                 </button>
             @else
                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" wire:click="firstStepSubmit"
-                type="button">{{ trans('trans.Next') }}
+                    type="button">{{ trans('trans.Next') }}
                 </button>
             @endif
         </div>

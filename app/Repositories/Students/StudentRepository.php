@@ -74,6 +74,13 @@ class StudentRepository implements StudentInterface
                     ]);
                 }
             }
+
+            // dd($request->hasFile('image'));
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('students/images', 'public');
+                $student->image = $path;
+            }
+            $student->save();
             DB::commit(); // insert data
 
             toastr()->success(trans('trans.message_added_student'));
@@ -127,15 +134,25 @@ class StudentRepository implements StudentInterface
                     'grade_id' => $request->grade_id,
                     'classe_id' => $request->classe_id,
                     'section_id' => $request->section_id,
-                    'parent_id' => $request->parent_id
+                    'parent_id' => $request->parent_id,
+                    
                 ];
 
             if ($request->filled('password')) {
                 $data['password'] = Hash::make($request->password);
             }
-
             $student->update($data);
 
+            if($request->hasFile('image')) {
+                // Storage::disk('public')->delete($teacher->image);
+                if($student->image && Storage::disk('public')->exists($student->image)) {
+                    Storage::disk('public')->delete($student->image);
+                }
+                
+                $path = $request->file('image')->store('students/images', 'public');
+                $student->update(['image' => $path]);
+            }
+            
             toastr()->success(trans('trans.message_update_student'));
             return redirect()->route('students.index');
         } catch (\Exception $e) {
@@ -189,19 +206,13 @@ class StudentRepository implements StudentInterface
     public function destroy($id)
     {
         // Delete Image From Server and DB
-        $student = Student::findOrFail($id);
+        $student = DB::table('students')->where('id', $id);
 
-        if ($student->images()->exists()) {
-            $images = $student->images;
-
-            foreach ($images as $image) {
-                Storage::disk('public')->delete("students_attachments/{$student->name_student_ar}");
-                $image->delete();
-            }
+        if(Storage::disk('public')->exists($student->first()->image)) {
+            Storage::disk('public')->delete($student->first()->image);
         }
-
         $student->delete();
-        toastr()->error(trans('trans.message_delete_student'));
+        toastr()->success(trans('trans.message_delete_student'));
         return redirect()->route('students.index');
     }
 

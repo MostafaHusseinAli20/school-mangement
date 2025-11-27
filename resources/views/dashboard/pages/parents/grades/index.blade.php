@@ -10,23 +10,9 @@
 @section('content')
     <div class="row">
 
-        @if ($errors->any())
-            <div class="error">{{ $errors->first('name') }}</div>
-        @endif
-
         <div class="col-xl-12 mb-30">
             <div class="card card-statistics h-100">
                 <div class="card-body">
-
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
                     
                     <div class="table-responsive">
                         <table id="datatable" class="table  table-hover table-sm table-bordered p-0" data-page-length="50"

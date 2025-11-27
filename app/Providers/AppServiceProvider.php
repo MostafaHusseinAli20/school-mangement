@@ -14,6 +14,9 @@ use App\Interfaces\Fees\ProcessingFeeInterface;
 use App\Interfaces\Grades\GradeInterface;
 use App\Interfaces\Library\LibraryInterface;
 use App\Interfaces\OnlineClasses\OnlineClasseInterface;
+use App\Interfaces\Parents\ParentAttendanceInterface;
+use App\Interfaces\Parents\ParentMainInterface;
+use App\Interfaces\Parents\ParentResultStudentInterface;
 use App\Interfaces\Sections\SectionInterface;
 use App\Interfaces\Settings\SettingInterface;
 use App\Interfaces\Students\ReceiptStudentInterface;
@@ -43,6 +46,9 @@ use App\Repositories\Fees\ProcessingFeeRepository;
 use App\Repositories\Grades\GradeRepository;
 use App\Repositories\Library\LibraryRepository;
 use App\Repositories\OnlineClasses\OnlineClasseRepository;
+use App\Repositories\Parents\ParentAttendanceRepository;
+use App\Repositories\Parents\ParentMainRepository;
+use App\Repositories\Parents\ParentResultStudentRepository;
 use App\Repositories\Sections\SectionRepository;
 use App\Repositories\Settings\SettingRepository;
 use App\Repositories\StudentPromotions\StudentPromotionRepository;
@@ -104,6 +110,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(StudentExamInterface::class, StudentExamRepository::class);
         $this->app->bind(StudentMainInterface::class, StudentMainRepository::class);
         $this->app->bind(StudentProfileInterface::class, StudentProfileRepository::class);
+
+        // Parents
+        $this->app->bind(ParentMainInterface::class, ParentMainRepository::class);
+        $this->app->bind(ParentAttendanceInterface::class, ParentAttendanceRepository::class);
+        $this->app->bind(ParentResultStudentInterface::class, ParentResultStudentRepository::class);
     }
 
     /**

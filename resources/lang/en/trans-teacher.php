@@ -17,4 +17,6 @@ return [
     "attendance_report" => "Attendance Report",
     "reports" => "Reports",
     "cancelled_exam" => "Cancelled Exam",
+    "name_ar" => "Name Teacher in Arabic",
+    "name_en" => "Name Teacher in English",
 ];

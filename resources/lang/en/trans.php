@@ -450,4 +450,10 @@ return [
     "message_cancelled_exam" => "Exam Cancelled For Student Successfuly",
     "cancelled_quizze_student" => "Cancel Exam For Student",
     "warning_cancel_exam" => "Are You Sure Cancel Exam For Student?",
+    "message_updated_parent" => "Parent Updated Successfuly",
+    "choose_image" => "Choose Image",
+
+    //
+    "admin" => "Admin",
+    "message_profile_admin_updated" => "Admin Profile Updated Successfuly",
 ];

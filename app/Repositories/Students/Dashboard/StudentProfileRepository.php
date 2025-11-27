@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class StudentProfileRepository implements StudentProfileInterface
 {
@@ -24,12 +25,14 @@ class StudentProfileRepository implements StudentProfileInterface
             'name_ar' => 'nullable|string|max:255',
             'name_en' => 'nullable|string|max:255',
             'password' => 'nullable|string|min:8',
+            'email' => 'nullable|email|max:255|unique:students,email,' . $id,
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         DB::beginTransaction();
 
         try {
-            $teacher = Student::findOrFail($id);
+            $student = Student::findOrFail($id);
 
             // نبدأ نبني البيانات اللي هنتحدثها
             $data = [];
@@ -37,8 +40,8 @@ class StudentProfileRepository implements StudentProfileInterface
             // تحديث الاسم فقط لو فيه حاجة متغيرة
             if ($request->filled('name_ar') || $request->filled('name_en')) {
                 $data['name'] = [
-                    'ar' => $request->name_ar ?? $teacher->getTranslation('name', 'ar'),
-                    'en' => $request->name_en ?? $teacher->getTranslation('name', 'en'),
+                    'ar' => $request->name_ar ?? $student->getTranslation('name', 'ar'),
+                    'en' => $request->name_en ?? $student->getTranslation('name', 'en'),
                 ];
             }
 
@@ -47,11 +50,25 @@ class StudentProfileRepository implements StudentProfileInterface
                 $data['password'] = Hash::make($request->password);
             }
 
-            // تنفيذ التحديث فقط لو في بيانات
-            if (!empty($data)) {
-                $teacher->update($data);
+            if($request->filled('email')) {
+                $data['email'] = $request->email;
             }
 
+            // تنفيذ التحديث فقط لو في بيانات
+            if (!empty($data)) {
+                $student->update($data);
+            }
+
+            if($request->hasFile('image')) {
+                if($student->image && Storage::disk('public')->exists($student->image)) {
+                    // حذف الصورة القديمة لو موجودة
+                    Storage::disk('public')->delete($student->image);
+                }
+                // تخزين الصورة الجديدة
+                $imagePath = $request->file('image')->store('students/images', 'public');
+                $student->image = $imagePath;
+            }
+            $student->save();
             DB::commit();
 
             toastr()->success(trans('trans.message_updated_teacher'));

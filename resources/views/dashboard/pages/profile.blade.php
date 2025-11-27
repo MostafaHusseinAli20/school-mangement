@@ -64,47 +64,35 @@
 
         <section style="background-color: #eee;">
             <div class="row">
+                
                 <div class="col-lg-12">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <form action="{{ route('student.profile.update', $information->id) }}" method="post"
+                            <form action="{{ route('profile.update', $information->id) }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
-                                <div class="d-flex flex-column justify-content-center align-items-center mb-3">
-                                    <div class="placeholder-text mb-2">{{ trans('trans.choose_image') }}</div>
-                                    <label for="mainImage" class="image-upload-container">
-                                        <div class="edit-icon">✎</div>
+                                 <div class="d-flex flex-column justify-content-center align-items-center mb-3">
+                                <div class="placeholder-text mb-2">{{ trans('trans.choose_image') }}</div>
+                                <label for="mainImage" class="image-upload-container">
+                                    <div class="edit-icon">✎</div>
 
-                                        <img id="previewImage" alt="selected image"
-                                            src="{{ $information->image ? asset("storage/$information->image") : asset('assets/images/student.png') }}"
-                                            style="display: {{ $information->image || asset('assets/images/student.png') ? 'block' : 'none' }}"
-                                            alt="student image">
-                                    </label>
-                                    <input type="file" id="mainImage" name="image" accept="image/*"
-                                        style="display:none;">
-                                </div>
+                                    <img id="previewImage" alt="selected image"
+                                        src="{{ $information->image ? asset("storage/$information->image") : asset('assets/images/admin.png') }}"
+                                        style="display: {{ $information->image || asset('assets/images/admin.png') ? 'block' : 'none' }}" 
+                                        alt="admin image"
+                                    >
+                                </label>
+                                <input type="file" id="mainImage" name="image" accept="image/*" style="display:none;">
+                            </div>
                                 <div class="row">
                                     <div class="col-sm-3">
-                                        <p class="mb-2">{{ trans('trans-student.student_name_ar') }}</p>
+                                        <p class="mb-2">{{ trans('trans.name') }}</p>
                                     </div>
                                     <div class="col-sm-12">
                                         <p class="text-muted mb-0">
-                                            <input type="text" name="name_ar"
-                                                value="{{ $information->getTranslation('name', 'ar') }}"
+                                            <input type="text" name="name" value="{{ $information->name }}"
                                                 class="form-control">
-                                        </p>
-                                    </div>
-                                </div>
-                                <hr>
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <p class="mb-2">{{ trans('trans-student.student_name_ar') }}</p>
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <p class="text-muted mb-0">
-                                            <input type="text" name="name_en"
-                                                value="{{ $information->getTranslation('name', 'en') }}" class="form-control">
                                         </p>
                                     </div>
                                 </div>

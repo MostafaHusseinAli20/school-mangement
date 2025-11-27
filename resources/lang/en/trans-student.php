@@ -18,4 +18,5 @@ return [
     "alertAbuse" => "Please do not reload the page after entering the exam - if you do so, your answers will be deleted and restarted.",
     "student_name_ar" => "Student Name AR",
     "student_name_en" => "Student Name EN"
+    
 ];

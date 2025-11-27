@@ -10,6 +10,7 @@ use App\Models\Teacher;
 use App\Repositories\Grades\GradeRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
 class TeacherRepository implements TeacherInterface
@@ -52,6 +53,12 @@ class TeacherRepository implements TeacherInterface
             ]);
 
             $teacher->grades()->attach($request->grade_id);
+
+            if ($request->hasFile('image')) {
+                $path = $request->file('image')->store('teachers/images', 'public');
+                $teacher->image = $path;
+                $teacher->save();
+            }
 
             DB::commit();
             toastr()->success(trans('trans.message_added_teacher'));
@@ -123,8 +130,18 @@ class TeacherRepository implements TeacherInterface
                 $teacher->grades()->sync($request->grade_id);
             }
 
-            DB::commit();
+            if($request->hasFile('image')) {
+                // Storage::disk('public')->delete($teacher->image);
+                if($teacher->image && Storage::disk('public')->exists($teacher->image)) {
+                    Storage::disk('public')->delete($teacher->image);
+                }
+                
+                $path = $request->file('image')->store('teachers/images', 'public');
+                $teacher->update(['image' => $path]);
+            }
 
+            DB::commit();
+            
             toastr()->success(trans('trans.message_updated_teacher'));
             return redirect()->route('teachers.index');
         } catch (\Exception $e) {
@@ -132,7 +149,6 @@ class TeacherRepository implements TeacherInterface
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
     }
-
 
     /**
      * Remove the specified resource from storage.

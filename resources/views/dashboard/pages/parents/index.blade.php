@@ -41,7 +41,8 @@
                     </div>
 
                     <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                        <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span
+                        <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{ route('parent.children') }}"
+                            target="_blank"><span
                                 class="text-danger">
                                 {{ trans('trans.show_data') }}
                             </span></a>
@@ -66,7 +67,7 @@
                         </div>
                     </div>
                     <p class="text-muted pt-3 mb-0 mt-2 border-top">
-                        <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="" target="_blank"><span
+                        <i class="fas fa-binoculars mr-1" aria-hidden="true"></i><a href="{{ route('parent.grades') }}" target="_blank"><span
                                 class="text-danger">
                                 {{ trans('trans.show_data') }}
                             </span>
@@ -85,7 +86,7 @@
                     <div class="col-md-8 col-lg-6 col-xl-4">
                         <a href="">
                             <div class="card text-black mt-4">
-                                <img class="w-50 mx-auto" src="{{ URL::asset('assets/images/my_son.png') }}" />
+                                <img class="w-50 mx-auto" src="{{ $son->image ? asset('storage/' . $son->image) : asset('assets/images/my_son.png') }}" />
                                 <div class="card-body">
                                     <div class="text-center">
                                         <h5 style="font-family: 'Cairo', sans-serif" class="card-title">{{ $son->name }}

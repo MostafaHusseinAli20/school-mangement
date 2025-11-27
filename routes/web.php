@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Dashboard\AdminProfileController;
 use App\Http\Controllers\Dashboard\Attendances\AttendanceController;
 use App\Http\Controllers\Dashboard\Classes\ClassesController;
 use App\Http\Controllers\Dashboard\Events\EventController;
@@ -58,7 +59,7 @@ Route::group([
 
     // Main Dashboard Route
     Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'indexAfterLogin'])
-    ->name('dashboard');
+        ->name('dashboard');
 
     // Grades Route
     Route::resource('grades', GradeController::class);
@@ -68,7 +69,7 @@ Route::group([
     Route::post('/delete_all', [ClassesController::class, 'delete_all'])->name('delete_all');
 
     Route::post('/filterclasse', [ClassesController::class, 'filter_classe'])->name('filter_classe');
-
+    
     // Sections Routes
     Route::resource('sections', SectionsController::class);
     Route::get('classes/{id}', [SectionsController::class, 'getclasses']);
@@ -135,6 +136,15 @@ Route::group([
     Route::get('/calendar', [EventController::class, 'index'])->name('calendar.index');
     Route::post('/add-event', [EventController::class, 'store'])->name('add.event');
     Route::post('/update-event', [EventController::class, 'update'])->name('update.event');
+
+    // Profile
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/', [AdminProfileController::class, 'index'])
+            ->name('profile.index');
+
+        Route::put('/update/{id}', [AdminProfileController::class, 'update'])
+            ->name('profile.update');
+    });
 });
 
 // Livewire Routes

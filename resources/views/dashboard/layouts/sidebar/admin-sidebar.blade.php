@@ -246,4 +246,9 @@
         <a href="{{ route('settings.index') }}"><i class="fas fa-cogs"></i><span class="right-nav-text">{{trans('trans.settings')}} </span></a>
     </li>
 
+    <!-- Profile-->
+    <li>
+        <a href="{{ route('profile.index') }}"><i class="fas fa-id-card-alt"></i><span class="right-nav-text">{{trans('trans.profile')}} </span></a>
+    </li>
+
 </ul>

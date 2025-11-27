@@ -29,7 +29,7 @@ class AddParent extends Component
     public $national_ID_father, $passport_ID_father;
     public $phone_father, $job_father, $job_father_en;
     public $nationality_father_id, $blood_type_father_id;
-    public $address_father, $religion_father_id;
+    public $address_father, $religion_father_id, $image;
 
     // Mother_INPUTS
     public $name_mother, $name_mother_en;
@@ -47,7 +47,8 @@ class AddParent extends Component
             'phone_father' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
             'national_ID_mother' => 'required|string|min:10|max:10|regex:/^\d{10}$/',
             'passport_ID_mother' => 'nullable|min:10|max:10',
-            'phone_mother' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10'
+            'phone_mother' => 'regex:/^([0-9\s\-\+\(\)]*)$/|min:10',
+            'image' => 'nullable|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
     }
 
@@ -78,6 +79,7 @@ class AddParent extends Component
             'blood_type_father_id' => 'required',
             'religion_father_id' => 'required',
             'address_father' => 'required',
+            'image' => 'nullable|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
         $this->currentStep = 2;
@@ -121,6 +123,7 @@ class AddParent extends Component
             $My_Parent->blood_type_father_id = $this->blood_type_father_id;
             $My_Parent->religion_father_id = $this->religion_father_id;
             $My_Parent->address_father = $this->address_father;
+            $My_Parent->image = $this->image ? $this->image->store('parents/images', 'public') : null;
 
             // Mother_INPUTS
             $My_Parent->name_mother = ['en' => $this->name_mother_en, 'ar' => $this->name_mother];
@@ -183,6 +186,7 @@ class AddParent extends Component
         $this->blood_type_mother_id = '';
         $this->address_mother = '';
         $this->religion_mother_id = '';
+        $this->image = '';
     }
 
     public function showformadd()
@@ -215,7 +219,7 @@ class AddParent extends Component
         $My_Parent = MyParent::where('id', $id)->first();
         $this->parent_id = $id;
         $this->email = $My_Parent->email;
-        $this->password = $My_Parent->password;
+        $this->password = '';
 
         // Father Information
         $this->name_father = $My_Parent->getTranslation('name_father', 'ar');
@@ -229,6 +233,7 @@ class AddParent extends Component
         $this->blood_type_father_id = $My_Parent->blood_type_father_id;
         $this->address_father = $My_Parent->address_father;
         $this->religion_father_id = $My_Parent->religion_father_id;
+        $this->image = $My_Parent->image;
 
         // Mother Information
         $this->name_mother = $My_Parent->getTranslation('name_mother', 'ar');
@@ -252,7 +257,15 @@ class AddParent extends Component
                 'name_father' => ['ar' => $this->name_father, 'en' => $this->name_father_en],
                 'national_ID_father' => $this->national_ID_father,
                 'passport_ID_father' => $this->passport_ID_father,
+                'image' => $this->image ? $this->image->store('parents/images', 'public') : $parent->image,
+                'email' => $this->email,
             ]);
+
+            if(request()->filled('password')) {
+                $parent->update([
+                    'password' => Hash::make($this->password),
+                ]);
+            }
 
             return redirect()->to(LaravelLocalization::getCurrentLocale() . '/add_parent');
         }

@@ -1,10 +1,66 @@
 @extends('dashboard.layouts.master')
 
-@section('title', __('trans.school_mangement_system') . " | " . __('trans.add_teacher'))
+@section('title', __('trans.school_mangement_system') . ' | ' . __('trans.add_teacher'))
 
 
 @section('css')
     @toastr_css
+    <style>
+        .image-upload-container {
+            width: 130px;
+            height: 130px;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8f8f8;
+            transition: 0.3s;
+        }
+
+        .image-upload-container:hover {
+            border-color: #aaa;
+        }
+
+        .image-upload-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            /* هتظهر بعد الاختيار */
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            background: #555;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .edit-icon:hover {
+            background: #333;
+        }
+
+        .placeholder-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
+        }
+    </style>
 @endsection
 
 @section('content')
@@ -14,21 +70,34 @@
             <div class="card card-statistics h-100">
                 <div class="card-body">
 
-                    
-
                     <div class="col-xs-12">
                         <div class="col-md-12">
                             <br>
-                            <form action="{{ route('teachers.store') }}" method="POST">
-                                @if (session()->has('error'))
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>{{ session()->get('error') }}</strong>
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <form action="{{ route('teachers.store') }}" method="POST" enctype="multipart/form-data">
+                                @csrf
 
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                    @endif
+                                <div class="d-flex flex-column justify-content-center align-items-center mb-3">
+                                    <div class="placeholder-text mb-2">{{ trans('trans.choose_image') }}</div>
+                                    <label for="mainImage" class="image-upload-container">
+                                        <div class="edit-icon">✎</div>
+
+                                        <img id="previewImage" alt="selected image">
+
+                                    </label>
+
+                                    <input type="file" id="mainImage" name="image" accept="image/*"
+                                        style="display:none;">
+                                </div>
+
+                                @if (session()->has('error'))
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <strong>{{ session()->get('error') }}</strong>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                @endif
                                 @csrf
                                 <div class="form-row">
                                     <div class="col">
@@ -138,7 +207,7 @@
                                 <button class="btn btn-success btn-sm nextBtn btn-lg pull-right"
                                     type="submit">{{ trans('trans.Next') }}
                                 </button>
-                                
+
                             </form>
                         </div>
                     </div>
@@ -152,4 +221,19 @@
 @section('js')
     @toastr_js
     @toastr_render
+    <script>
+        document.getElementById("mainImage").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById("previewImage");
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = "block";
+                    preview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 @endsection

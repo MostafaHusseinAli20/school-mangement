@@ -107,8 +107,15 @@ header start-->
         <li class="nav-item dropdown mr-30">
             <a class="nav-link nav-pill user-avatar" data-toggle="dropdown" href="#" role="button"
                 aria-haspopup="true" aria-expanded="false">
-                <img src="{{ URL::asset('assets/images/user_icon.png') }}" alt="avatar">
-
+                @if(Auth::guard('web')->check())
+                    <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : asset('assets/images/admin.png') }}" alt="avatar">
+                @elseif(Auth::guard('student')->check())
+                    <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : asset('assets/images/student.png') }}" alt="avatar">
+                @elseif(Auth::guard('teacher')->check())
+                    <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : asset('assets/images/teacher.png') }}" alt="avatar">
+                @else
+                    <img src="{{ Auth::user()->image ? asset('storage/' . Auth::user()->image) : asset('assets/images/parent.png') }}" alt="avatar">
+                @endif
 
             </a>
             <div class="dropdown-menu dropdown-menu-right">

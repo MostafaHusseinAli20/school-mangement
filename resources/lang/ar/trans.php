@@ -458,4 +458,10 @@ return [
     "message_cancelled_exam" => "تم الغاء الامتحان للطالب بنجاح",
     "cancelled_quizze_student" => "الغاء الامتحان للطالب",
     "warning_cancel_exam" => "هل تريد الغاء الامتحان للطالب؟",
+    "message_updated_parent" => "تم تحديث بيانات ولي الامر بنجاح",
+    "choose_image" => "اختر صورة",
+
+    //
+    "admin" => "الادمن",
+    "message_profile_admin_updated" => "تم تحديث بيانات الادمن بنجاح",
 ];

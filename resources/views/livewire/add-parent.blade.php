@@ -1,3 +1,62 @@
+    @section('css')
+    @toastr_css
+    <style>
+        .image-upload-container {
+            width: 130px;
+            height: 130px;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #f8f8f8;
+            transition: 0.3s;
+        }
+
+        .image-upload-container:hover {
+            border-color: #aaa;
+        }
+
+        .image-upload-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+            /* هتظهر بعد الاختيار */
+        }
+
+        .edit-icon {
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            background: #555;
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .edit-icon:hover {
+            background: #333;
+        }
+
+        .placeholder-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+            text-align: center;
+        }
+    </style>
+@endsection
 <div>
     @if (!empty($successMessage))
         <div class="alert alert-success" id="success-alert">
@@ -77,3 +136,23 @@
             </div>
     @endif
 </div>
+
+@section('js')
+    @toastr_js
+    @toastr_render
+    <script>
+        document.getElementById("mainImage").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            const preview = document.getElementById("previewImage");
+
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.style.display = "block";
+                    preview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+@endsection

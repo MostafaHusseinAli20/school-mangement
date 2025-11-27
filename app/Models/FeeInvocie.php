@@ -28,4 +28,9 @@ class FeeInvocie extends Model
         return $this->belongsTo(Classe::class, 'classe_id');
     }
 
+    public function receipt()
+    {
+        return $this->belongsTo(ReceiptStudent::class);
+    }
+
 }

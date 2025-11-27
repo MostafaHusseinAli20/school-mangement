@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Dashboard\Parent\Dashboard\ParentAttendanceController;
 use App\Http\Controllers\Dashboard\Parent\Dashboard\ParentMainController;
+use App\Http\Controllers\Dashboard\Parent\Dashboard\ParentResultStudentController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -27,10 +29,24 @@ Route::group([
 
             Route::get('/filter', [ParentMainController::class, 'filterChildern'])
                 ->name('parent.children.filter');
+
+            Route::get('/result/{id}', [ParentResultStudentController::class, 'result'])
+                ->name('parent.children.result');
+
+            Route::get('/attendance/{id}', [ParentAttendanceController::class, 'attendance'])
+                ->name('parent.children.attendance');
+
+            Route::get('/fees/recipt/{id}', [ParentMainController::class, 'feesRecipt'])
+                ->name('parent.fees.recipt');
         });
 
-        Route::get('/profile', [ParentMainController::class, 'profile'])
-            ->name('parent.profile');
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('/', [ParentMainController::class, 'profile'])
+                ->name('parent.profile');
+
+            Route::put('/{id}', [ParentMainController::class, 'updateProfile'])
+                ->name('parent.profile.update');
+        });
 
         Route::get('/fees', [ParentMainController::class, 'fees'])
             ->name('parent.fees');
